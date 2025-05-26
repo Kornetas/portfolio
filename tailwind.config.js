@@ -4,10 +4,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        "neon-green": "#39FF14",
+        "neon-blue": "#00CFFF",
       },
       boxShadow: {
-        "neon-glow": "0 0 16px 2px #39FF14, 0 0 40px 4px #39FF14",
+        "neon-blue-glow": "0 0 16px 2px #00CFFF, 0 0 40px 4px #00CFFF",
       },
       keyframes: {
         slideDownUp: {
