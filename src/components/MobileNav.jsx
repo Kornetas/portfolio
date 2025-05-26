@@ -1,5 +1,14 @@
 import { Link } from "react-router-dom";
 import { FiMenu, FiX } from "react-icons/fi";
+import StaggeredList from "./StaggeredList";
+
+const navLinks = [
+  { to: "/", label: "Home" },
+  { to: "/about", label: "About" },
+  { to: "/projects", label: "Projects" },
+  { to: "/skills", label: "Skills" },
+  { to: "/contact", label: "Contact" },
+];
 
 export default function MobileNav({ open, setOpen }) {
   return (
@@ -13,41 +22,18 @@ export default function MobileNav({ open, setOpen }) {
       </button>
       {open && (
         <div className="absolute top-16 left-0 w-full bg-gray-950 border-t border-gray-800 flex flex-col items-center py-6 z-50 animate-slide-down">
-          <Link
-            to="/"
-            className="text-2xl py-2 hover:text-neon-blue transition"
-            onClick={() => setOpen(false)}
-          >
-            Home
-          </Link>
-          <Link
-            to="/about"
-            className="text-2xl py-2 hover:text-neon-blue transition"
-            onClick={() => setOpen(false)}
-          >
-            About
-          </Link>
-          <Link
-            to="/projects"
-            className="text-2xl py-2 hover:text-neon-blue transition"
-            onClick={() => setOpen(false)}
-          >
-            Projects
-          </Link>
-          <Link
-            to="/skills"
-            className="text-2xl py-2 hover:text-neon-blue transition"
-            onClick={() => setOpen(false)}
-          >
-            Skills
-          </Link>
-          <Link
-            to="/contact"
-            className="text-2xl py-2 hover:text-neon-blue transition"
-            onClick={() => setOpen(false)}
-          >
-            Contact
-          </Link>
+          <StaggeredList from="top" stagger={0.09}>
+            {navLinks.map((link) => (
+              <Link
+                key={link.to}
+                to={link.to}
+                onClick={() => setOpen(false)}
+                className="text-2xl block py-2 text-center hover:text-neon-blue transition"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </StaggeredList>
         </div>
       )}
     </>
