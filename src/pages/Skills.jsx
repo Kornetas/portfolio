@@ -1,3 +1,5 @@
+import { useState } from "react";
+import StaggeredList from "../components/StaggeredList";
 import {
   FaHtml5,
   FaCss3Alt,
@@ -8,6 +10,7 @@ import {
   FaGitAlt,
   FaGithub,
   FaDatabase,
+  FaTimes,
 } from "react-icons/fa";
 import {
   SiRedux,
@@ -121,21 +124,83 @@ const allSkills = [
 ];
 
 function Skills() {
+  const [query, setQuery] = useState("");
+  const [showAll, setShowAll] = useState(false);
+
+  // Przefiltruj skille po nazwie (niezależnie od wielkości liter)
+  const filteredSkills = showAll
+    ? allSkills
+    : allSkills.filter((skill) =>
+        skill.name.toLowerCase().includes(query.toLowerCase())
+      );
+
   return (
     <section className="flex flex-col items-center min-h-[60vh] px-4 py-8">
-      <h2 className="text-3xl md:text-4xl font-bold mb-8 text-white">Skills</h2>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 w-full max-w-6xl">
-        {allSkills.map((skill) => (
-          <div
-            key={skill.name}
-            className="flex flex-col items-center bg-gray-800 rounded-xl p-4 border border-gray-700 shadow hover:shadow-md transition hover:scale-105 cursor-pointer"
+      {/* Search box */}
+      <div className="relative w-full max-w-xs">
+        <input
+          type="text"
+          className="bg-[#181828] text-white rounded-xl px-4 py-2 border border-cyan-400 focus:outline-none w-full pr-10"
+          placeholder="Search skills..."
+          value={query}
+          onChange={(e) => {
+            setQuery(e.target.value);
+            setShowAll(false);
+          }}
+        />
+        {query && (
+          <button
+            type="button"
+            className="absolute right-3 top-1/2 -translate-y-1/2 text-cyan-400 hover:text-cyan-200 text-xl"
+            onClick={() => {
+              setQuery("");
+              setShowAll(true);
+            }}
+            aria-label="Clear"
           >
-            {skill.icon && <div className="text-4xl mb-2">{skill.icon}</div>}
-            <div className="text-white font-medium text-center text-sm">
-              {skill.name}
-            </div>
+            <FaTimes />
+          </button>
+        )}
+      </div>
+
+      <button
+        onClick={() => {
+          setShowAll(true);
+          setQuery("");
+        }}
+        className="mt-2 text-cyan-200 hover:text-cyan-400 font-mono text-lg transition"
+      >
+        Show All
+      </button>
+      <div className="relative flex flex-col justify-center items-center w-full min-h-[200px] max-w-6xl">
+        {filteredSkills.length === 0 ? (
+          <div className="text-red-600 text-lg font-semibold py-8 text-center mt-[-100px]">
+            Sorry, I don’t know this skill yet – but I’m always learning and
+            leveling up!
           </div>
-        ))}
+        ) : (
+          <StaggeredList
+            key={query + showAll}
+            from="bottom"
+            stagger={0.07}
+            duration={0.5}
+            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 w-full mt-16"
+          >
+            {filteredSkills.map((skill) => (
+              <div
+                key={skill.name}
+                className="flex flex-col items-center bg-gray-800 rounded-xl p-4 border border-gray-700 shadow hover:shadow-md transition hover:scale-105"
+              >
+                {skill.icon && (
+                  <div className="text-4xl mb-2">{skill.icon}</div>
+                )}
+                <div className="text-white font-medium text-center text-sm">
+                  {skill.name}
+                </div>
+              </div>
+            ))}
+          </StaggeredList>
+        )}
       </div>
     </section>
   );
