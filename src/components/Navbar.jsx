@@ -1,6 +1,10 @@
+import MobileNav from "./MobileNav";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 function Navbar() {
+  const [open, setOpen] = useState(false);
+
   return (
     <nav className="bg-gray-950 text-white shadow-lg">
       <div className="max-w-screen-2xl mx-auto flex justify-between items-center py-3 px-4 md:px-8">
@@ -37,6 +41,8 @@ function Navbar() {
             Contact
           </Link>
         </div>
+        {/* Mobile Nav */}
+        <MobileNav open={open} setOpen={setOpen} />
       </div>
     </nav>
   );
