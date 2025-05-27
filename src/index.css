@@ -5,3 +5,7 @@
 .badge-skill {
   @apply bg-cyan-900/50 border border-cyan-700 text-cyan-100 text-xs font-semibold px-3 py-1 rounded-full;
 }
+html {
+  scrollbar-gutter: stable;
+  overflow-y: scroll;
+}

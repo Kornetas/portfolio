@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-
 import { useState, useEffect } from "react";
 import StaggeredList from "../components/StaggeredList";
 
@@ -7,14 +6,12 @@ export default function About() {
   const [showBoxes, setShowBoxes] = useState(false);
 
   useEffect(() => {
-    // Po sekundzie pokaż pudełka
     const timeout = setTimeout(() => setShowBoxes(true), 1000);
     return () => clearTimeout(timeout);
   }, []);
 
   return (
-    <section className="flex flex-col items-center min-h-[80vh] px-2 py-10 bg-[#10101a]">
-      {/* Najpierw wjeżdża nagłówek */}
+    <section className="flex flex-col items-center min-h-[80vh] px-2 py-10">
       <StaggeredList
         from="bottom"
         stagger={0.3}
@@ -24,20 +21,22 @@ export default function About() {
         <h2 className="inline-block text-4xl md:text-5xl font-bold text-white mb-4 text-center hover:text-cyan-400 transition">
           About Me
         </h2>
-        <div className="mx-auto my-2 h-1 w-16" />
+        <div className="mx-auto my-2 h-1 w-16 bg-cyan-400 rounded-full" />
       </StaggeredList>
 
-      {/* Potem, po 1s, pudełka */}
-      {showBoxes && (
+      <div
+        className={`w-full max-w-5xl flex flex-col gap-8 mt-8 transition-opacity duration-700 ${
+          showBoxes ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
+        style={{ minHeight: "1150px" }}
+      >
         <StaggeredList
           from="bottom"
           stagger={0.5}
-          duration={0.5}
-          className="w-full max-w-5xl flex flex-col gap-8 mt-8"
+          duration={0.6}
+          className="w-full flex flex-col gap-8"
         >
-          {/* Górny grid 2x1 */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
-            {/* Pudełko 1 */}
             <div className="bg-[#181828] border border-cyan-800 rounded-2xl shadow-lg p-7 flex flex-col">
               <h3 className="text-2xl text-white font-bold mb-2">
                 How I Became a Full Stack Web Dev
@@ -49,10 +48,8 @@ export default function About() {
                 </span>
                 <br />
                 <br />
-                My adventure in web development began with a single thought:
-                "How are websites built?" Driven by this curiosity, I explored
-                both front-end and back-end technologies, building practical
-                projects along the way.{" "}
+                Driven by this curiosity, I explored both front-end and back-end
+                technologies, building practical projects along the way.{" "}
                 <span className="font-semibold text-cyan-400">
                   At BloomTech
                 </span>
@@ -64,7 +61,7 @@ export default function About() {
                 <span className="badge-skill">React</span>
                 <span className="badge-skill">Node.js</span>
                 <span className="badge-skill">Express</span>
-                <span className="badge-skill">Tailwind CSS</span>
+                <span className="badge-skill">SQL</span>
               </div>
               <Link
                 to="/skills"
@@ -74,15 +71,15 @@ export default function About() {
                 <span className="font-bold">Skills</span>
               </Link>
             </div>
-            {/* Pudełko: Warehouse Operative */}
+
             <div className="bg-[#181828] border border-cyan-800 rounded-2xl shadow-lg p-7 flex flex-col">
               <h3 className="text-2xl text-white font-bold mb-2">
                 Experience - Warehouse Operative
               </h3>
               <p className="text-gray-200 text-base mb-4">
-                Worked in high-volume warehouses across the UK and Germany,
-                gaining practical experience in fast-paced logistics
-                environments:
+                Worked in high-volume warehouses across the 2016 (UK), 2018–2024
+                (Germany, seasonal) , gaining practical experience in fast-paced
+                logistics environments:
               </p>
               <ul className="list-disc ml-6 text-gray-300 text-base mb-3">
                 <li>
@@ -107,7 +104,6 @@ export default function About() {
             </div>
           </div>
 
-          {/* Jedno duże pudełko na całą szerokość */}
           <div className="bg-[#181828] border border-cyan-800 rounded-2xl shadow-lg p-7 flex flex-col">
             <h3 className="text-2xl text-white font-bold mb-3">
               Certificate in Full Stack Web Development & Technical Interviewing
@@ -139,14 +135,12 @@ export default function About() {
               <iframe
                 src="/BloomTech Certificate.pdf"
                 title="BloomTech Certificate"
-                className="w-full h-[220px] sm:h-[340px] md:h-[580px] lg:h-[760px] rounded-xl border-non"
+                className="w-full h-[220px] sm:h-[340px] md:h-[580px] lg:h-[760px] rounded-xl border-none"
               ></iframe>
             </div>
           </div>
 
-          {/* Dwa pudełka na dole */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
-            {/* Outside of Coding */}
             <div className="bg-[#181828] border border-cyan-800 rounded-2xl shadow-lg p-7 flex flex-col">
               <h3 className="text-2xl text-white font-bold mb-2">
                 When I’m Not Coding
@@ -192,7 +186,6 @@ export default function About() {
               </ul>
             </div>
 
-            {/* My Philosophy */}
             <div className="bg-[#181828] border border-cyan-800 rounded-2xl shadow-lg p-7 flex flex-col">
               <h3 className="text-2xl text-white font-bold mb-2">
                 My Approach to Development
@@ -213,7 +206,7 @@ export default function About() {
             </div>
           </div>
         </StaggeredList>
-      )}
+      </div>
     </section>
   );
 }
