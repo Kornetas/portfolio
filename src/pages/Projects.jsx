@@ -1,62 +1,158 @@
-function Projects() {
-  const projects = [
-    {
-      name: "DevConnect",
-      description:
-        "A social platform for developers to connect, share projects and ideas.",
-      github: "https://github.com/example/devconnect",
-      website: "https://devconnect-demo.vercel.app",
-    },
-    {
-      name: "QuickTasker",
-      description:
-        "A simple and fast task manager for productivity enthusiasts.",
-      github: "https://github.com/example/quicktasker",
-      website: "https://quicktasker-demo.vercel.app",
-    },
-    {
-      name: "Portfolio Magic",
-      description:
-        "A portfolio generator that lets users create stunning pages in minutes.",
-      github: "https://github.com/example/portfolio-magic",
-      website: "https://portfoliomagic-demo.vercel.app",
-    },
-  ];
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { useEffect, useState, useRef } from "react";
+import StaggeredList from "../components/StaggeredList";
+
+const projects = [
+  {
+    name: "PortfolioNext",
+    description:
+      "A modern portfolio built with Next.js and Tailwind – fully responsive and ready for any occasion. Lightning-fast loading, SEO optimized, and packed with PRO-level animations.",
+    github: "https://github.com/arekdev/portfolio-next",
+    website: "https://portfolionext.vercel.app",
+    techs: ["Next.js", "React", "Tailwind CSS"],
+  },
+  {
+    name: "TaskFlow",
+    description:
+      "Task management application powered by Node.js, Express, and MongoDB. Features include team collaboration, notifications, and integrations – your personal project manager.",
+    github: "https://github.com/arekdev/taskflow",
+    website: "https://taskflow.vercel.app",
+    techs: [
+      "JavaScript",
+      "React",
+      "Tailwind CSS",
+      "Node.js",
+      "Express",
+      "MongoDB",
+    ],
+  },
+  {
+    name: "DevFinder",
+    description:
+      "Developer search application leveraging the GitHub API. Effortlessly filter, follow, and discover ideal developers for your team. Fast, modern, and visually stunning.",
+    github: "https://github.com/arekdev/devfinder",
+    website: "https://devfinder.vercel.app",
+    techs: ["React", "Axios", "RESTful API"],
+  },
+  {
+    name: "SQL Dashboard",
+    description:
+      "Data analytics dashboard using PostgreSQL, Chart.js, and Bootstrap. Features interactive charts, real-time summaries, and fully customizable filtering.",
+    github: "https://github.com/arekdev/sql-dashboard",
+    website: "https://sqldashboard.vercel.app",
+    techs: ["PostgreSQL", "Chart.js", "Bootstrap"],
+  },
+];
+
+export default function Projects() {
+  const [showProjects, setShowProjects] = useState(false);
+
+  const descRefs = useRef([]);
+
+  useEffect(() => {
+    descRefs.current.forEach((desc) => {
+      if (!desc) return;
+      desc.style.fontSize = "1.125rem";
+      desc.style.lineHeight = "1.5";
+      if (desc.scrollHeight > 60) desc.style.fontSize = "1rem";
+      if (desc.scrollHeight > 75) desc.style.fontSize = "0.95rem";
+      if (desc.scrollHeight > 90) desc.style.fontSize = "0.88rem";
+    });
+  }, []);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => setShowProjects(true), 1000);
+    return () => clearTimeout(timeout);
+  }, []);
+
   return (
-    <section className="flex flex-col items-center min-h-[60vh] px-4 py-8">
-      <h2 className="text-3xl md:text-4xl font-bold mb-6 neon-text">
-        Projects
-      </h2>
-      <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-3 gap-6">
-        {projects.map((project, idx) => (
-          <div
-            key={project.name}
-            className="bg-gray-800 rounded-xl p-6 shadow-neon-glow flex flex-col items-start"
+    <section className="flex flex-col items-center min-h-[60vh] px-4 py-12">
+      <StaggeredList
+        from="bottom"
+        stagger={0.3}
+        duration={0.5}
+        className="w-full flex flex-col items-center"
+      >
+        <h2 className="text-3xl md:text-4xl font-bold mb-2 text-white text-center hover:text-cyan-400 transition">
+          My Projects
+        </h2>
+        <div className="mx-auto my-2 h-1 w-16 bg-cyan-400 rounded-full" />
+        <p className="text-xl text-gray-300 text-center mb-20">
+          Check out some of my recent work
+        </p>
+      </StaggeredList>
+
+      {showProjects && (
+        <StaggeredList
+          from="bottom"
+          stagger={0.5}
+          duration={0.5}
+          className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-14"
+        >
+          {projects.map((project, idx) => (
+            <div
+              key={project.name}
+              className="bg-[#232336] rounded-2xl p-10 shadow-lg flex flex-col justify-between border border-cyan-800 min-h-[330px] md:min-h-[380px] w-full max-w-3xl mx-auto"
+            >
+              <div>
+                <h3 className="text-3xl md:text-4xl font-extrabold text-white mb-3 text-center">
+                  {project.name}
+                </h3>
+                <p
+                  ref={(el) => (descRefs.current[idx] = el)}
+                  className="text-gray-300 mb-4 min-h-[48px] text-center"
+                  style={{ wordBreak: "break-word" }}
+                >
+                  {project.description}
+                </p>
+              </div>
+              <div>
+                <div className="flex flex-wrap justify-center gap-2 mb-5">
+                  {project.techs.map((tech) => (
+                    <span
+                      key={tech}
+                      className="bg-cyan-900/50 border border-cyan-700 text-cyan-100 text-xs font-semibold px-3 py-1 rounded-full"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                <div className="flex gap-4 mt-4 justify-center">
+                  <a
+                    href={project.github}
+                    className="flex items-center gap-1 px-4 py-2 rounded-lg border-2 border-cyan-500 text-cyan-400 font-bold hover:bg-cyan-500 hover:text-[#181828] transition"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaGithub /> GitHub
+                  </a>
+                  <a
+                    href={project.website}
+                    className="flex items-center gap-1 px-4 py-2 rounded-lg border-2 border-pink-400 text-pink-300 font-bold hover:bg-pink-400 hover:text-[#181828] transition"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaExternalLinkAlt /> Live Demo
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </StaggeredList>
+      )}
+
+      {showProjects && (
+        <StaggeredList from="bottom" stagger={0.9} duration={0.5}>
+          <a
+            href="https://github.com/arekdev"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-10 px-8 py-4 bg-transparent border-2 border-cyan-400 rounded-xl text-cyan-400 font-bold text-lg hover:bg-cyan-400 hover:text-[#181828] transition shadow-lg mx-auto block"
           >
-            <h3 className="text-xl font-semibold text-neon-green mb-2">
-              {project.name}
-            </h3>
-            <p className="text-gray-200 mb-4">{project.description}</p>
-            <a
-              href={project.github}
-              className="underline mr-3"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GitHub
-            </a>
-            <a
-              href={project.website}
-              className="underline"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Website
-            </a>
-          </div>
-        ))}
-      </div>
+            View More on GitHub
+          </a>
+        </StaggeredList>
+      )}
     </section>
   );
 }
-export default Projects;
