@@ -5,6 +5,7 @@ import About from "./pages/About";
 import Projects from "./pages/Projects";
 import Skills from "./pages/Skills";
 import Contact from "./pages/Contact";
+import BackToTopButton from "./components/BackToTopButton";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/skills" element={<Skills />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
+        <BackToTopButton />
       </div>
     </Router>
   );
