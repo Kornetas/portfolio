@@ -16,9 +16,16 @@ export default {
           "90%": { opacity: 1, transform: "translateY(0)" },
           "100%": { opacity: 0, transform: "translateY(-100%)" },
         },
+        "bounce-x": {
+          "0%, 100%": { transform: "translateX(0)" },
+          "50%": { transform: "translateX(6px)" },
+        },
       },
       animation: {
         slideDownUp: "slideDownUp 3s cubic-bezier(0.4, 0, 0.2, 1)",
+      },
+      animation: {
+        "bounce-x": "bounce-x 1.8s infinite ease-in-out",
       },
     },
   },

@@ -1,18 +1,219 @@
-function About() {
+import { Link } from "react-router-dom";
+
+import { useState, useEffect } from "react";
+import StaggeredList from "../components/StaggeredList";
+
+export default function About() {
+  const [showBoxes, setShowBoxes] = useState(false);
+
+  useEffect(() => {
+    // Po sekundzie pokaż pudełka
+    const timeout = setTimeout(() => setShowBoxes(true), 1000);
+    return () => clearTimeout(timeout);
+  }, []);
+
   return (
-    <section className="flex flex-col items-center justify-center min-h-[60vh] px-4 text-center">
-      <h2 className="text-3xl md:text-4xl font-bold mb-4 neon-text">
-        About Me
-      </h2>
-      <p className="text-lg max-w-2xl text-gray-300">
-        Hi! I’m Arek, a passionate Full Stack Web Developer with experience in
-        React, Node.js, and modern web technologies. I love building apps that
-        solve real problems, and I’m always learning something new.
-        <br />
-        When I’m not coding, you’ll find me drinking coffee, reading about tech,
-        or playing with new JavaScript frameworks!
-      </p>
+    <section className="flex flex-col items-center min-h-[80vh] px-2 py-10 bg-[#10101a]">
+      {/* Najpierw wjeżdża nagłówek */}
+      <StaggeredList
+        from="bottom"
+        stagger={0.3}
+        duration={0.5}
+        className="w-full text-center"
+      >
+        <h2 className="inline-block text-4xl md:text-5xl font-bold text-white mb-4 text-center hover:text-cyan-400 transition">
+          About Me
+        </h2>
+        <div className="mx-auto my-2 h-1 w-16" />
+      </StaggeredList>
+
+      {/* Potem, po 1s, pudełka */}
+      {showBoxes && (
+        <StaggeredList
+          from="bottom"
+          stagger={0.5}
+          duration={0.5}
+          className="w-full max-w-5xl flex flex-col gap-8 mt-8"
+        >
+          {/* Górny grid 2x1 */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+            {/* Pudełko 1 */}
+            <div className="bg-[#181828] border border-cyan-800 rounded-2xl shadow-lg p-7 flex flex-col">
+              <h3 className="text-2xl text-white font-bold mb-2">
+                How I Became a Full Stack Web Dev
+              </h3>
+              <p className="text-gray-200 text-base mb-4">
+                My adventure in web development began with a single thought:{" "}
+                <span className="italic text-cyan-400">
+                  "How are websites built?"
+                </span>
+                <br />
+                <br />
+                My adventure in web development began with a single thought:
+                "How are websites built?" Driven by this curiosity, I explored
+                both front-end and back-end technologies, building practical
+                projects along the way.{" "}
+                <span className="font-semibold text-cyan-400">
+                  At BloomTech
+                </span>
+                , I gained hands-on experience with modern frameworks and
+                essential tools that power today’s web applications:
+              </p>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="badge-skill">JavaScript</span>
+                <span className="badge-skill">React</span>
+                <span className="badge-skill">Node.js</span>
+                <span className="badge-skill">Express</span>
+                <span className="badge-skill">Tailwind CSS</span>
+              </div>
+              <Link
+                to="/skills"
+                className="inline-block font-bold text-cyan-400 underline underline-offset-4 hover:text-cyan-300 transition-transform duration-300 hover:scale-105 animate-bounce-x"
+              >
+                Check out all my technical skills here:{" "}
+                <span className="font-bold">Skills</span>
+              </Link>
+            </div>
+            {/* Pudełko: Warehouse Operative */}
+            <div className="bg-[#181828] border border-cyan-800 rounded-2xl shadow-lg p-7 flex flex-col">
+              <h3 className="text-2xl text-white font-bold mb-2">
+                Experience - Warehouse Operative
+              </h3>
+              <p className="text-gray-200 text-base mb-4">
+                Worked in high-volume warehouses across the UK and Germany,
+                gaining practical experience in fast-paced logistics
+                environments:
+              </p>
+              <ul className="list-disc ml-6 text-gray-300 text-base mb-3">
+                <li>
+                  <span className="text-cyan-400 font-medium">Teamwork</span>:
+                  Cooperated with diverse teams to meet tight deadlines.
+                </li>
+                <li>
+                  <span className="text-cyan-400 font-medium">
+                    Adaptability
+                  </span>
+                  : Adjusted quickly to new environments and languages.
+                </li>
+                <li>
+                  <span className="text-cyan-400 font-medium">Reliability</span>
+                  : Maintained high standards of accuracy and consistency.
+                </li>
+              </ul>
+              <p className="text-gray-400 text-sm">
+                These skills now help me stay organized, adaptable, and focused
+                on quality in my development projects.
+              </p>
+            </div>
+          </div>
+
+          {/* Jedno duże pudełko na całą szerokość */}
+          <div className="bg-[#181828] border border-cyan-800 rounded-2xl shadow-lg p-7 flex flex-col">
+            <h3 className="text-2xl text-white font-bold mb-3">
+              Certificate in Full Stack Web Development & Technical Interviewing
+            </h3>
+            <div className="text-gray-300 text-1xl mb-3">
+              <a
+                href="https://www.bloomtech.com/courses/full-stack-web-development"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block font-bold text-cyan-400 underline underline-offset-4 hover:text-cyan-300 transition-transform duration-300 hover:scale-105 animate-bounce-x mb-2"
+              >
+                Bloom Institute of Technology | Online Coding Bootcamp
+              </a>
+              <span className="ml-2 text-gray-300">| 2025</span>
+              <span className="block mt-1 mb-5">
+                A comprehensive certification proving expertise in modern web
+                development technologies and technical interviewing.
+                <br />
+                <span className="hidden md:inline">
+                  Earned by passing rigorous technical assessments, building
+                  full-stack applications, completing an advanced curriculum in
+                  computer science, and delivering collaborative, real-world
+                  projects at BloomTech Labs that reflect modern industry
+                  standards.
+                </span>
+              </span>
+            </div>
+            <div className="flex-1 flex items-center justify-center rounded-xl overflow-hidden">
+              <iframe
+                src="/BloomTech Certificate.pdf"
+                title="BloomTech Certificate"
+                className="w-full h-[220px] sm:h-[340px] md:h-[580px] lg:h-[760px] rounded-xl border-non"
+              ></iframe>
+            </div>
+          </div>
+
+          {/* Dwa pudełka na dole */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+            {/* Outside of Coding */}
+            <div className="bg-[#181828] border border-cyan-800 rounded-2xl shadow-lg p-7 flex flex-col">
+              <h3 className="text-2xl text-white font-bold mb-2">
+                When I’m Not Coding
+              </h3>
+              <p className="text-gray-200 text-base mb-4">
+                When I’m not coding, I’m always looking for new ways to grow and
+                stay active. My free time is all about recharging and trying new
+                things:
+              </p>
+              <ul className="list-disc ml-6 text-gray-300 text-base mb-3">
+                <li>
+                  <span className="text-cyan-400 font-medium">
+                    Learning English
+                  </span>
+                  : Constantly improving my communication skills for both work
+                  and life.
+                </li>
+                <li>
+                  <span className="text-cyan-400 font-medium">
+                    Tech Curiosity
+                  </span>
+                  : Exploring the latest tech trends and testing out new tools
+                  just for fun.
+                </li>
+                <li>
+                  <span className="text-cyan-400 font-medium">
+                    Team Sports & Gaming
+                  </span>
+                  : I enjoy playing team games that keep me competitive and
+                  social.
+                </li>
+                <li>
+                  <span className="text-cyan-400 font-medium">
+                    Staying Active
+                  </span>
+                  : Regular walks and cycling help me clear my mind and stay
+                  energized.
+                </li>
+                <li>
+                  <span className="text-cyan-400 font-medium">Music</span>:
+                  Listening to music is my go-to way to relax and recharge.
+                </li>
+              </ul>
+            </div>
+
+            {/* My Philosophy */}
+            <div className="bg-[#181828] border border-cyan-800 rounded-2xl shadow-lg p-7 flex flex-col">
+              <h3 className="text-2xl text-white font-bold mb-2">
+                My Approach to Development
+              </h3>
+              <p className="text-gray-200 text-base">
+                I’m driven by the challenge of solving complex problems with
+                clean, efficient solutions. Whether it’s designing an intuitive
+                user interface or building a powerful back-end, I always aim to
+                deliver applications that not only work well but also delight
+                users. I believe that great code is just the beginning—what
+                really matters is the experience it creates. That’s why I put
+                the user at the center of every project, focus on
+                maintainability, and never stop learning new approaches or
+                technologies. For me, web development is about turning big ideas
+                into practical, accessible, and enjoyable digital products—while
+                having some fun along the way.
+              </p>
+            </div>
+          </div>
+        </StaggeredList>
+      )}
     </section>
   );
 }
-export default About;
