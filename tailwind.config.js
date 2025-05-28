@@ -25,7 +25,7 @@ export default {
         slideDownUp: "slideDownUp 3s cubic-bezier(0.4, 0, 0.2, 1)",
       },
       animation: {
-        "bounce-x": "bounce-x 1.8s infinite ease-in-out",
+        "bounce-x": "bounce-x 1s infinite ease-in-out",
       },
     },
   },

@@ -36,3 +36,96 @@ html {
 .animate-slide-up {
   animation: slide-up 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
+
+@keyframes glow {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+.animate-glow {
+  animation: glow 2.5s infinite ease-in-out;
+}
+/* DODAJ DO TAILWINDA, np. w index.css (lub global.css) */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes fade-in-down {
+  from {
+    opacity: 0;
+    transform: translateY(-32px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.animate-fade-in {
+  animation: fade-in 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+.animate-fade-in-down {
+  animation: fade-in-down 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+.animate-fade-in-up {
+  animation: fade-in-up 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@media (min-width: 1500px) {
+  .hero-section {
+    transform: translateX(15%);
+  }
+  .hero-text {
+    /* overlap tylko na dużych – na mniejszych normalnie */
+    margin-left: -320px;
+    margin-top: -320px;
+  }
+}
+
+@media (max-width: 1199px) {
+  /* na średnich ekranach, resetujemy te przesunięcia */
+  .hero-section {
+    transform: none;
+  }
+  .hero-text {
+    margin-left: 0;
+    margin-top: 0;
+  }
+}
+
+/* Opcjonalnie na jeszcze mniejszych (tablet/telefon) */
+@media (max-width: 767px) {
+  .hero-section {
+    transform: none !important;
+  }
+  .hero-text {
+    margin-left: 0 !important;
+    margin-top: 0 !important;
+  }
+}
+
+.hero-avatar-filter {
+  filter: blur(1px) grayscale(50%) brightness(0.5);
+}
+.hero-avatar-mobile-filter {
+  filter: blur(1px) grayscale(50%) brightness(0.8);
+}
