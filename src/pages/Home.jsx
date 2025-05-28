@@ -1,9 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import StaggeredList from "../components/StaggeredList";
-import avatar from "/profile.png";
+import HeroAvatar from "../components/HeroAvatar";
 
-export default function Hero() {
+export default function Home() {
   const navigate = useNavigate();
 
   return (
@@ -17,24 +17,7 @@ export default function Hero() {
           delay={0.3}
           className="relative w-full md:w-2/4 items-center justify-center py-8 md:py-0 hidden md:flex md:-mt-32"
         >
-          <img
-            src={avatar}
-            alt="Arek"
-            className="
-              object-contain
-              md:h-[80vh] md:max-h-[1050px]
-              w-auto
-              opacity-90
-              z-10
-              select-none
-              pointer-events-none
-              hero-avatar-filter
-            "
-            draggable="false"
-          />
-          <div className="absolute inset-0 z-0 pointer-events-none">
-            <div className="w-full h-full rounded-3xl blur-2xl bg-gradient-to-br from-black/30 via-white/10 to-gray-900/40"></div>
-          </div>
+          <HeroAvatar variant="desktop" />
         </StaggeredList>
 
         {/* (mobile) */}
@@ -55,20 +38,7 @@ export default function Hero() {
 
             {/* photo mobile */}
             <div className="w-full flex justify-center my-4 md:hidden">
-              <img
-                src={avatar}
-                alt="Arek"
-                className="
-                  object-contain
-                  h-[38vh] xs:h-[45vh] sm:h-[52vh] max-h-[350px]
-                  w-auto
-                  opacity-90
-                  select-none
-                  pointer-events-none
-                  hero-avatar-mobile-filter
-                "
-                draggable="false"
-              />
+              <HeroAvatar variant="mobile" />
             </div>
 
             <p className="text-gray-200 md:text-xl sm:text-lg max-w-xl mb-1 text-center md:text-left">
