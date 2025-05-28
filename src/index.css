@@ -46,9 +46,7 @@ html {
     opacity: 1;
   }
 }
-.animate-glow {
-  animation: glow 2.5s infinite ease-in-out;
-}
+
 /* DODAJ DO TAILWINDA, np. w index.css (lub global.css) */
 @keyframes fade-in {
   from {
@@ -79,15 +77,6 @@ html {
     opacity: 1;
     transform: none;
   }
-}
-.animate-fade-in {
-  animation: fade-in 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-.animate-fade-in-down {
-  animation: fade-in-down 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-}
-.animate-fade-in-up {
-  animation: fade-in-up 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
 @media (min-width: 1500px) {
