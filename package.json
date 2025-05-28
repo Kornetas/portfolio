@@ -3,6 +3,14 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "description": "Personal portfolio of Arkadiusz Rak – Full Stack Web Developer.",
+  "author": "Arkadiusz Rak",
+  "license": "MIT",
+  "homepage": "https://kornet.dev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kornetas/portfolio.git"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
