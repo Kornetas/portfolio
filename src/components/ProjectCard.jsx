@@ -3,8 +3,10 @@ import React from "react";
 
 export default function ProjectCard({ project, descRef }) {
   return (
+    // Main card container for a single project
     <div className="bg-[#232336] rounded-2xl p-10 shadow-lg flex flex-col justify-between border border-cyan-800 min-h-[330px] md:min-h-[380px] w-full max-w-3xl mx-auto">
       <div>
+        {/* Project name */}
         <h3 className="text-3xl md:text-4xl font-extrabold text-white mb-3 text-center">
           {project.name}
         </h3>
@@ -17,6 +19,7 @@ export default function ProjectCard({ project, descRef }) {
         </p>
       </div>
       <div>
+        {/* Technologies used in the project */}
         <div className="flex flex-wrap justify-center gap-2 mb-5">
           {project.techs.map((tech) => (
             <span
@@ -27,6 +30,7 @@ export default function ProjectCard({ project, descRef }) {
             </span>
           ))}
         </div>
+        {/* Project links: GitHub and Live Demo */}
         <div className="flex gap-4 mt-4 justify-center">
           <a
             href={project.github}

@@ -11,7 +11,10 @@ function App() {
   return (
     <Router>
       <div className="min-h-screen bg-gray-900 text-white">
+        {/* Main site navigation bar */}
         <Navbar />
+
+        {/* Page routes */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -19,6 +22,8 @@ function App() {
           <Route path="/skills" element={<Skills />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
+
+        {/* Floating "Back to Top" button */}
         <BackToTopButton />
       </div>
     </Router>

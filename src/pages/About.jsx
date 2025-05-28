@@ -3,8 +3,10 @@ import { useState, useEffect } from "react";
 import StaggeredList from "../components/StaggeredList";
 
 export default function About() {
+  // State to control the fade-in animation of content boxes
   const [showBoxes, setShowBoxes] = useState(false);
 
+  // Show the boxes after a delay for a smooth entrance animation
   useEffect(() => {
     const timeout = setTimeout(() => setShowBoxes(true), 1000);
     return () => clearTimeout(timeout);
@@ -12,6 +14,7 @@ export default function About() {
 
   return (
     <section className="flex flex-col items-center min-h-[80vh] px-2 py-10">
+      {/* Section header with animation */}
       <StaggeredList
         from="bottom"
         stagger={0.3}
@@ -24,20 +27,24 @@ export default function About() {
         <div className="mx-auto my-2 h-1 w-16 bg-cyan-400 rounded-full" />
       </StaggeredList>
 
+      {/* Fade-in animated content boxes */}
       <div
         className={`w-full max-w-5xl flex flex-col gap-8 mt-8 transition-opacity duration-700 ${
           showBoxes ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
         style={{ minHeight: "1150px" }}
       >
+        {/* Main content with staggered reveal */}
         <StaggeredList
           from="bottom"
           stagger={0.5}
           duration={0.6}
           className="w-full flex flex-col gap-8"
         >
+          {/* Education and Experience section */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
             <div className="bg-[#181828] border border-cyan-800 rounded-2xl shadow-lg p-7 flex flex-col">
+              {/* How I Became a Full Stack Web Dev */}
               <h3 className="text-2xl text-white font-bold mb-2">
                 How I Became a Full Stack Web Dev
               </h3>
@@ -73,6 +80,7 @@ export default function About() {
             </div>
 
             <div className="bg-[#181828] border border-cyan-800 rounded-2xl shadow-lg p-7 flex flex-col">
+              {/* Experience - Warehouse Operative */}
               <h3 className="text-2xl text-white font-bold mb-2">
                 Experience - Warehouse Operative
               </h3>
@@ -104,7 +112,9 @@ export default function About() {
             </div>
           </div>
 
+          {/* Certificate section */}
           <div className="bg-[#181828] border border-cyan-800 rounded-2xl shadow-lg p-7 flex flex-col">
+            {/* Certificate in Full Stack Web Development */}
             <h3 className="text-2xl text-white font-bold mb-3">
               Certificate in Full Stack Web Development & Technical Interviewing
             </h3>
@@ -140,6 +150,7 @@ export default function About() {
             </div>
           </div>
 
+          {/* Two-column section: Other interests and approach */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
             <div className="bg-[#181828] border border-cyan-800 rounded-2xl shadow-lg p-7 flex flex-col">
               <h3 className="text-2xl text-white font-bold mb-2">
@@ -187,6 +198,7 @@ export default function About() {
             </div>
 
             <div className="bg-[#181828] border border-cyan-800 rounded-2xl shadow-lg p-7 flex flex-col">
+              {/* My Approach to Development */}
               <h3 className="text-2xl text-white font-bold mb-2">
                 My Approach to Development
               </h3>

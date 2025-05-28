@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <div className="overflow-hidden w-full">
       <section className="hero-section relative w-full flex flex-col-reverse md:flex-row md:min-h-screen">
-        {/* Screen (desktop only) */}
+        {/* Animated desktop avatar section, only visible on larger screens */}
         <StaggeredList
           from="bottom"
           stagger={1}
@@ -20,7 +20,7 @@ export default function Home() {
           <HeroAvatar variant="desktop" />
         </StaggeredList>
 
-        {/* (mobile) */}
+        {/* Main hero text and controls (mobile and desktop) */}
         <div className="hero-text w-full md:w-2/4 flex flex-col justify-center items-center md:items-start px-4 sm:px-10 md:pl-20 z-10 pb-12 md:pb-0 pt-8 md:pt-0">
           <StaggeredList
             from="bottom"
@@ -28,19 +28,22 @@ export default function Home() {
             duration={1}
             className="w-full flex flex-col items-center md:items-start"
           >
+            {/* Name */}
             <h1 className="text-white font-extrabold mb-3 sm:mb-1 leading-tight text-center md:text-left text-[clamp(2.5rem,7vw,5rem)]">
               Arkadiusz Rak
             </h1>
 
+            {/* Professional title */}
             <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-cyan-400 mb-2 text-center md:text-left">
               Full Stack Web Developer
             </h2>
 
-            {/* photo mobile */}
+            {/* Avatar image for mobile */}
             <div className="w-full flex justify-center my-4 md:hidden">
               <HeroAvatar variant="mobile" />
             </div>
 
+            {/* Short description */}
             <p className="text-gray-200 md:text-xl sm:text-lg max-w-xl mb-1 text-center md:text-left">
               With a passion for detail.
             </p>
@@ -50,7 +53,7 @@ export default function Home() {
             </p>
 
             <div className="flex gap-4 sm:gap-6 flex-col sm:flex-row items-center md:items-start">
-              {/* DOWNLOAD */}
+              {/* Download Resume button */}
               <a
                 href="/CV.pdf"
                 download
@@ -58,7 +61,7 @@ export default function Home() {
               >
                 Download Resume (CV)
               </a>
-              {/* ROUTE */}
+              {/* Navigate to contact page button */}
               <button
                 onClick={() => navigate("/contact")}
                 className="mt-2 px-8 py-3 rounded-xl font-bold border-2 border-cyan-400 text-cyan-400 shadow-xl hover:bg-cyan-400 hover:text-[#181828] transition text-lg"

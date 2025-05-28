@@ -44,6 +44,7 @@ import {
   SiVercel,
 } from "react-icons/si";
 
+// Main skills list with icons
 const skills = [
   { name: "HTML5", icon: <FaHtml5 className="text-orange-500" /> },
   { name: "CSS3", icon: <FaCss3Alt className="text-blue-500" /> },
@@ -99,6 +100,7 @@ const skills = [
   { name: "Vercel", icon: <SiVercel className="text-black dark:text-white" /> },
 ];
 
+// Skills without icons (just names)
 const skillsNoIcon = [
   "Webpack",
   "VS Code",
@@ -115,6 +117,7 @@ const skillsNoIcon = [
   "No-Code Automation",
 ];
 
+// Combine all skills into one array for filtering/search
 const allSkills = [
   ...skills,
   ...skillsNoIcon.map((name) => ({
@@ -124,13 +127,14 @@ const allSkills = [
 ];
 
 export default function Skills() {
+  // States for search, "show all" toggle, and animated entrances
   const [query, setQuery] = useState("");
   const [showAll, setShowAll] = useState(false);
-
   const [showSearchBox, setShowSearchBox] = useState(false);
   const [showShowAll, setShowShowAll] = useState(false);
   const [showSkills, setShowSkills] = useState(false);
 
+  // Entrance animation for search box, "show all" button, and skills grid
   useEffect(() => {
     const t1 = setTimeout(() => setShowSearchBox(true), 400);
     const t2 = setTimeout(() => setShowShowAll(true), 900);
@@ -142,6 +146,7 @@ export default function Skills() {
     };
   }, []);
 
+  // Filter skills based on user input or "show all"
   const filteredSkills = showAll
     ? allSkills
     : allSkills.filter((skill) =>
@@ -150,6 +155,7 @@ export default function Skills() {
 
   return (
     <section className="flex flex-col items-center min-h-[60vh] px-4 py-8">
+      {/* Animated search box for filtering skills */}
       {showSearchBox && (
         <StaggeredList
           from="bottom"
@@ -168,6 +174,8 @@ export default function Skills() {
                 setShowAll(false);
               }}
             />
+
+            {/* Button to clear search input */}
             {query && (
               <button
                 type="button"
@@ -185,6 +193,7 @@ export default function Skills() {
         </StaggeredList>
       )}
 
+      {/* "Show All" button */}
       {showShowAll && (
         <StaggeredList
           from="bottom"
@@ -205,6 +214,7 @@ export default function Skills() {
       )}
 
       <div className="relative flex flex-col justify-center items-center w-full min-h-[200px] max-w-6xl">
+        {/* Show message if no skills match the filter */}
         {showSkills &&
           (filteredSkills.length === 0 ? (
             <div className="text-red-600 text-lg font-semibold py-8 text-center mt-[-100px]">
@@ -212,6 +222,7 @@ export default function Skills() {
               leveling up!
             </div>
           ) : (
+            // Animated grid of skill icons/badges
             <StaggeredList
               key={query + showAll}
               from="bottom"
@@ -224,6 +235,7 @@ export default function Skills() {
                   key={skill.name}
                   className="flex flex-col items-center bg-gray-800 rounded-xl p-4 border border-gray-700 shadow hover:shadow-md transition hover:scale-105"
                 >
+                  {/* Skill icon (if available) */}
                   {skill.icon && (
                     <div className="text-4xl mb-2">{skill.icon}</div>
                   )}

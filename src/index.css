@@ -2,14 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Custom badge style for skills */
 .badge-skill {
   @apply bg-cyan-900/50 border border-cyan-700 text-cyan-100 text-xs font-semibold px-3 py-1 rounded-full;
 }
+
+/* Ensure scrollbar does not shift layout */
 html {
   scrollbar-gutter: stable;
   overflow-y: scroll;
 }
 
+/* Animations for mobile navigation slide-down/up */
 @keyframes slide-down {
   from {
     opacity: 0;
@@ -37,6 +41,7 @@ html {
   animation: slide-up 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
+/* Simple glowing animation for attention effects */
 @keyframes glow {
   0%,
   100% {
@@ -47,7 +52,7 @@ html {
   }
 }
 
-/* DODAJ DO TAILWINDA, np. w index.css (lub global.css) */
+/* Fade-in animations for entrances */
 @keyframes fade-in {
   from {
     opacity: 0;
@@ -79,19 +84,20 @@ html {
   }
 }
 
+/* Custom hero section layout adjustments for extra-large screens */
 @media (min-width: 1500px) {
   .hero-section {
     transform: translateX(15%);
   }
   .hero-text {
-    /* overlap tylko na dużych – na mniejszych normalnie */
+    /* Overlap only on extra-large screens */
     margin-left: -320px;
     margin-top: -320px;
   }
 }
 
 @media (max-width: 1199px) {
-  /* na średnich ekranach, resetujemy te przesunięcia */
+  /* Reset transforms for medium screens */
   .hero-section {
     transform: none;
   }
@@ -101,7 +107,7 @@ html {
   }
 }
 
-/* Opcjonalnie na jeszcze mniejszych (tablet/telefon) */
+/* Reset transforms for mobile/tablet */
 @media (max-width: 767px) {
   .hero-section {
     transform: none !important;
@@ -112,6 +118,7 @@ html {
   }
 }
 
+/* Avatar image filters for different devices */
 .hero-avatar-filter {
   filter: blur(1px) grayscale(50%) brightness(0.5);
 }

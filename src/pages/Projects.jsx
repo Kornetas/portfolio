@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import StaggeredList from "../components/StaggeredList";
 import ProjectCard from "../components/ProjectCard";
 
+// List of all featured projects to display
 const projects = [
   {
     name: "PortfolioNext",
@@ -45,10 +46,13 @@ const projects = [
 ];
 
 export default function Projects() {
+  // Show the project cards after a short delay (for entrance animation)
   const [showProjects, setShowProjects] = useState(false);
 
+  // Refs to control font size of project descriptions based on content height
   const descRefs = useRef([]);
 
+  // Dynamically adjust description font size for each project card
   useEffect(() => {
     descRefs.current.forEach((desc) => {
       if (!desc) return;
@@ -60,6 +64,7 @@ export default function Projects() {
     });
   }, []);
 
+  // Fade-in animation for the projects section
   useEffect(() => {
     const timeout = setTimeout(() => setShowProjects(true), 1000);
     return () => clearTimeout(timeout);
@@ -67,6 +72,7 @@ export default function Projects() {
 
   return (
     <section className="flex flex-col items-center min-h-[60vh] px-4 py-12">
+      {/* Section heading */}
       <StaggeredList
         from="bottom"
         stagger={0.3}
@@ -82,6 +88,7 @@ export default function Projects() {
         </p>
       </StaggeredList>
 
+      {/* Animated grid of project cards */}
       {showProjects && (
         <StaggeredList
           from="bottom"
@@ -99,6 +106,7 @@ export default function Projects() {
         </StaggeredList>
       )}
 
+      {/* GitHub link at the bottom */}
       {showProjects && (
         <StaggeredList from="bottom" stagger={0.9} duration={0.5}>
           <a

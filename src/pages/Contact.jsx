@@ -4,9 +4,12 @@ import { MdEmail } from "react-icons/md";
 import StaggeredList from "../components/StaggeredList";
 
 function Contact() {
+  // State for showing the "Copied to clipboard!" message
   const [copied, setCopied] = useState(false);
+
   const email = "arek93r@gmail.com";
 
+  // Copies the email to clipboard and shows a notification
   const handleCopy = () => {
     navigator.clipboard.writeText(email);
     setCopied(true);
@@ -15,26 +18,32 @@ function Contact() {
 
   return (
     <section className="relative flex flex-col items-center justify-center min-h-screen px-4 py-12">
+      {/* "Copied to clipboard!" notification */}
       {copied && (
         <div className="fixed top-8 inset-x-0 mx-auto z-50 bg-cyan-500 text-white text-lg px-6 py-2 rounded-lg shadow-lg font-bold animate-slideDownUp w-max transition-opacity duration-300">
           Copied to clipboard!
         </div>
       )}
+
+      {/* Section heading */}
       <StaggeredList
         from="bottom"
         duration={0.7}
         className="flex flex-col items-center w-full"
       >
-        <h2 className="text-3xl md:text-4xl font-bold mb-20 text-white text-center">
+        <h2 className="text-3xl md:text-4xl font-bold mb-28 text-white text-center">
           Choose <span className="text-cyan-400">your</span> way to{" "}
           <span className="text-cyan-400">contact me</span>
         </h2>
       </StaggeredList>
+
+      {/* Contact methods (LinkedIn, GitHub, E-mail, copy email button) */}
       <StaggeredList
         from="bottom"
         stagger={0.3}
         className="flex flex-wrap gap-6 items-center justify-center w-full max-w-4xl"
       >
+        {/* LinkedIn */}
         <a
           href="https://www.linkedin.com/in/arek-dev"
           target="_blank"
@@ -44,6 +53,7 @@ function Contact() {
           <FaLinkedin className="text-white text-2xl transition" />
           Linkedin
         </a>
+        {/* GitHub */}
         <a
           href="https://github.com/arekdev"
           target="_blank"
@@ -53,6 +63,7 @@ function Contact() {
           <FaGithub className="text-white text-2xl transition" />
           GitHub
         </a>
+        {/* E-mail */}
         <a
           href="mailto:contact@arek.dev"
           className="flex items-center gap-2 px-8 py-4 rounded-full border-2 border-white text-white font-bold text-lg transition hover:border-cyan-400 hover:text-cyan-400 focus:outline-none"
@@ -60,6 +71,7 @@ function Contact() {
           <MdEmail className="text-white text-2xl transition" />
           E-mail
         </a>
+        {/* Copy email button */}
         <button
           type="button"
           onClick={handleCopy}

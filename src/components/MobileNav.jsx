@@ -4,6 +4,7 @@ import { FiMenu, FiX } from "react-icons/fi";
 import StaggeredList from "./StaggeredList";
 import clsx from "clsx";
 
+// All navigation links for the mobile menu
 const navLinks = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
@@ -13,8 +14,10 @@ const navLinks = [
 ];
 
 export default function MobileNav({ open, setOpen }) {
+  // Used to control exit animation before actually closing the menu
   const [closing, setClosing] = useState(false);
 
+  // When a link is clicked, play closing animation before hiding the menu
   const handleLinkClick = () => {
     setClosing(true);
     setTimeout(() => {
@@ -25,6 +28,7 @@ export default function MobileNav({ open, setOpen }) {
 
   return (
     <>
+      {/* Hamburger menu button (shows X icon when open) */}
       <button
         className="md:hidden text-3xl p-2 focus:outline-none"
         onClick={() => setOpen(!open)}
@@ -32,6 +36,8 @@ export default function MobileNav({ open, setOpen }) {
       >
         {open ? <FiX /> : <FiMenu />}
       </button>
+
+      {/* Animated mobile menu dropdown, with slide-down/up effect */}
       {(open || closing) && (
         <div
           className={clsx(
@@ -39,6 +45,7 @@ export default function MobileNav({ open, setOpen }) {
             open && !closing ? "animate-slide-down" : "animate-slide-up"
           )}
         >
+          {/* Staggered animated list of nav links */}
           <StaggeredList from="top" stagger={0.09}>
             {navLinks.map((link) => (
               <Link
