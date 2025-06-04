@@ -1,6 +1,6 @@
 import MobileNav from "./MobileNav";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Navbar() {
   // Controls if the mobile menu is open
@@ -10,38 +10,61 @@ function Navbar() {
     <nav className="bg-gray-950 text-white shadow-lg">
       <div className="max-w-screen-2xl mx-auto flex justify-between items-center py-3 px-4 md:px-8">
         {/* Logo / Home link */}
-        <Link
+        <NavLink
           to="/"
           className="text-3xl md:text-4xl font-bold tracking-widest text-white hover:text-neon-blue transition"
+          end
         >
           kornet.dev
-        </Link>
+        </NavLink>
         {/* Desktop navigation links (hidden on mobile) */}
         <div className="hidden md:flex space-x-8">
-          <Link to="/" className="text-xl hover:text-neon-blue transition">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              "text-xl transition " +
+              (isActive ? "text-neon-blue font-bold" : "hover:text-neon-blue")
+            }
+            end
+          >
             Home
-          </Link>
-          <Link to="/about" className="text-xl hover:text-neon-blue transition">
+          </NavLink>
+          <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              "text-xl transition " +
+              (isActive ? "text-neon-blue font-bold" : "hover:text-neon-blue")
+            }
+          >
             About
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             to="/projects"
-            className="text-xl hover:text-neon-blue transition"
+            className={({ isActive }) =>
+              "text-xl transition " +
+              (isActive ? "text-neon-blue font-bold" : "hover:text-neon-blue")
+            }
           >
             Projects
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             to="/skills"
-            className="text-xl hover:text-neon-blue transition"
+            className={({ isActive }) =>
+              "text-xl transition " +
+              (isActive ? "text-neon-blue font-bold" : "hover:text-neon-blue")
+            }
           >
             Skills
-          </Link>
-          <Link
+          </NavLink>
+          <NavLink
             to="/contact"
-            className="text-xl hover:text-neon-blue transition"
+            className={({ isActive }) =>
+              "text-xl transition " +
+              (isActive ? "text-neon-blue font-bold" : "hover:text-neon-blue")
+            }
           >
             Contact
-          </Link>
+          </NavLink>
         </div>
         {/* Mobile navigation button & menu */}
         <MobileNav open={open} setOpen={setOpen} />
