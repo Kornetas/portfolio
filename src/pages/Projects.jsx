@@ -23,7 +23,7 @@ const projects = [
   {
     name: "API Forge",
     description:
-      "Simple Node.js + Express API with user authentication, JWT, roles (admin/user), and CRUD for products – fully tested with Jest.",
+      "A RESTful API built with Node.js, Express, and MongoDB, supporting user registration, JWT authentication, and role-based access. Product CRUD endpoints are protected so only admins or product owners can modify or delete items. Passwords are hashed with bcrypt and core features are covered by Jest tests.",
     github: "https://github.com/Kornetas/api-forge",
     website: "https://github.com/Kornetas/api-forge",
     techs: ["Node.js", "Express", "MongoDB", "Jest", "Supertest"],
@@ -31,7 +31,7 @@ const projects = [
   {
     name: "GraphQL Project in Progress",
     description:
-      "his project is currently under development. The stack includes React and Next.js for the frontend, with module CSS for styling. The backend uses GraphQL and Apollo Server, with PostgreSQL as the database. End-to-end testing is performed using Playwright. The main goal is to build a modern, scalable web application with real-time data handling.",
+      "This project is currently under development. The stack includes React and Next.js for the frontend, with module CSS for styling. The backend uses GraphQL and Apollo Server, with PostgreSQL as the database. End-to-end testing is performed using Playwright. The main goal is to build a modern, scalable web application with real-time data handling.",
     github: "https://github.com/Kornetas",
     website: "https://github.com/Kornetas",
     techs: [
