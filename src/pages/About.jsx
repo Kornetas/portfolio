@@ -141,13 +141,30 @@ export default function About() {
                 </span>
               </span>
             </div>
-            <div className="flex-1 flex items-center justify-center rounded-xl overflow-hidden">
+            <div className="flex-1 flex flex-col items-center justify-center rounded-xl overflow-hidden">
+              {/* On desktop/tablet: show certificate PDF in iframe */}
               <iframe
                 src="/BloomTech Certificate.pdf"
                 title="BloomTech Certificate"
-                className="w-full min-h-[300px] aspect-video rounded-xl border-none"
+                className="hidden sm:block w-full min-h-[340px] md:min-h-[500px] lg:min-h-[700px] aspect-video rounded-xl border-none"
                 style={{ maxWidth: "100%" }}
               ></iframe>
+
+              {/* On mobile: show certificate image */}
+              <img
+                src="/Certificate.png"
+                alt="Certificate"
+                className="block sm:hidden w-full max-w-full h-auto rounded-xl"
+              />
+
+              {/* Link to download the PDF certificate */}
+              <a
+                href="/BloomTech Certificate.pdf"
+                download
+                className="mt-4 text-cyan-400 underline underline-offset-4 block text-center hover:text-cyan-300 transition"
+              >
+                Download certificate (PDF)
+              </a>
             </div>
           </div>
 
