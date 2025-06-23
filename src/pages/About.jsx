@@ -157,7 +157,7 @@ export default function About() {
                 className="block sm:hidden w-full max-w-full h-auto rounded-xl"
               />
 
-              {/* Link to download the PDF certificate */}
+              {/* Link to View the PDF certificate */}
               <a
                 href="/BloomTech Certificate.pdf"
                 target="_blank"
