@@ -160,10 +160,11 @@ export default function About() {
               {/* Link to download the PDF certificate */}
               <a
                 href="/BloomTech Certificate.pdf"
-                download
+                target="_blank"
+                rel="noopener noreferrer"
                 className="mt-4 text-cyan-400 underline underline-offset-4 block text-center hover:text-cyan-300 transition"
               >
-                Download certificate (PDF)
+                View certificate (PDF)
               </a>
             </div>
           </div>
