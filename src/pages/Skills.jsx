@@ -18,9 +18,7 @@ import {
   SiTailwindcss,
   SiPyup,
   SiNextdotjs,
-  SiRemix,
   SiVite,
-  SiExpo,
   SiExpress,
   SiGraphql,
   SiPostgresql,
@@ -29,7 +27,6 @@ import {
   SiKnexdotjs,
   SiFirebase,
   SiJest,
-  SiMocha,
   SiCypress,
   SiPuppeteer,
   SiPostman,
@@ -42,6 +39,8 @@ import {
   SiRender,
   SiNetlify,
   SiVercel,
+  SiFigma,
+  SiWordpress,
 } from "react-icons/si";
 
 // Main skills list with icons
@@ -51,7 +50,6 @@ const skills = [
   { name: "JavaScript", icon: <FaJsSquare className="text-yellow-400" /> },
   { name: "SQL", icon: <FaDatabase className="text-indigo-500" /> },
   { name: "React", icon: <FaReact className="text-cyan-400" /> },
-  { name: "React Native", icon: <FaReact className="text-cyan-400" /> },
   { name: "Redux", icon: <SiRedux className="text-purple-500" /> },
   { name: "Axios", icon: <SiAxios className="text-sky-500" /> },
   { name: "Tailwind CSS", icon: <SiTailwindcss className="text-cyan-400" /> },
@@ -60,9 +58,7 @@ const skills = [
     name: "Next.js",
     icon: <SiNextdotjs className="text-black dark:text-white" />,
   },
-  { name: "Remix", icon: <SiRemix className="text-black dark:text-white" /> },
   { name: "Vite", icon: <SiVite className="text-yellow-400" /> },
-  { name: "Expo", icon: <SiExpo className="text-black dark:text-white" /> },
   { name: "Node.js", icon: <FaNodeJs className="text-green-600" /> },
   {
     name: "Express",
@@ -70,6 +66,7 @@ const skills = [
   },
   { name: "GraphQL", icon: <SiGraphql className="text-pink-500" /> },
   { name: "RESTful API", icon: <FaDatabase className="text-blue-300" /> },
+  { name: "WordPress", icon: <SiWordpress className="text-blue-500" /> },
   { name: "Bootstrap", icon: <FaBootstrap className="text-purple-600" /> },
   { name: "PostgreSQL", icon: <SiPostgresql className="text-blue-700" /> },
   { name: "MongoDB", icon: <SiMongodb className="text-green-600" /> },
@@ -77,7 +74,6 @@ const skills = [
   { name: "Knex.js", icon: <SiKnexdotjs className="text-orange-400" /> },
   { name: "Firebase", icon: <SiFirebase className="text-yellow-500" /> },
   { name: "Jest", icon: <SiJest className="text-red-500" /> },
-  { name: "Mocha", icon: <SiMocha className="text-brown-700" /> },
   { name: "Cypress", icon: <SiCypress className="text-green-400" /> },
   { name: "Puppeteer", icon: <SiPuppeteer className="text-yellow-500" /> },
   { name: "Postman", icon: <SiPostman className="text-orange-500" /> },
@@ -90,6 +86,7 @@ const skills = [
     name: "GitHub",
     icon: <FaGithub className="text-gray-900 dark:text-white" />,
   },
+  { name: "Figma", icon: <SiFigma className="text-pink-500" /> },
   { name: "Heroku", icon: <SiHeroku className="text-purple-800" /> },
   {
     name: "Railway",

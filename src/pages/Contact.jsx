@@ -45,7 +45,7 @@ function Contact() {
       >
         {/* LinkedIn */}
         <a
-          href="https://www.linkedin.com/in/arek-dev"
+          href="https://www.linkedin.com/in/arkadiusz-rak-807272306"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 px-8 py-4 rounded-full border-2 border-white text-white font-bold text-lg transition hover:border-cyan-400 hover:text-cyan-400 focus:outline-none"
@@ -55,7 +55,7 @@ function Contact() {
         </a>
         {/* GitHub */}
         <a
-          href="https://github.com/arekdev"
+          href="https://github.com/Kornetas"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 px-8 py-4 rounded-full border-2 border-white text-white font-bold text-lg transition hover:border-cyan-400 hover:text-cyan-400 focus:outline-none"
@@ -65,7 +65,7 @@ function Contact() {
         </a>
         {/* E-mail */}
         <a
-          href="mailto:contact@arek.dev"
+          href="mailto:arek93r@gmail.com"
           className="flex items-center gap-2 px-8 py-4 rounded-full border-2 border-white text-white font-bold text-lg transition hover:border-cyan-400 hover:text-cyan-400 focus:outline-none"
         >
           <MdEmail className="text-white text-2xl transition" />

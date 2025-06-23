@@ -5,43 +5,43 @@ import ProjectCard from "../components/ProjectCard";
 // List of all featured projects to display
 const projects = [
   {
-    name: "PortfolioNext",
+    name: "BloomTech Labs Project",
     description:
-      "A modern portfolio built with Next.js and Tailwind – fully responsive and ready for any occasion. Lightning-fast loading, SEO optimized, and packed with PRO-level animations.",
-    github: "https://github.com/arekdev/portfolio-next",
-    website: "https://portfolionext.vercel.app",
-    techs: ["Next.js", "React", "Tailwind CSS"],
+      "I completed three development tickets as part of a student project at BloomTech. The project uses React (with Vite) for the frontend, Axios for communication with the backend API, and Plotly for advanced data visualizations. The app allows users to view different types of interactive graphs, filter data, and download datasets for further analysis.",
+    github: "https://github.com/Kornetas/asylum-hrf-fe-starter",
+    website: "https://asylum-fe.netlify.app",
+    techs: ["HTML5", "Javascript", "React", "Tailwind CSS", "RTL", "Cypress"],
   },
   {
-    name: "TaskFlow",
+    name: "Portfolio of Arkadiusz Rak",
     description:
-      "Task management application powered by Node.js, Express, and MongoDB. Features include team collaboration, notifications, and integrations – your personal project manager.",
-    github: "https://github.com/arekdev/taskflow",
-    website: "https://taskflow.vercel.app",
+      "I built a personal portfolio website with a modern, fully responsive design using React and Vite. The site highlights my skills, projects, and experience as a Full Stack Web Developer. It features animated transitions, a mobile-friendly layout, and an eye-catching landing page. Visitors can browse my work, download my resume, and contact me.",
+    github: "https://github.com/Kornetas/portfolio",
+    website: "https://kornet.dev",
+    techs: ["HTML5", "JavaScript", "React", "Tailwind CSS"],
+  },
+  {
+    name: "API Forge",
+    description:
+      "Simple Node.js + Express API with user authentication, JWT, roles (admin/user), and CRUD for products – fully tested with Jest.",
+    github: "https://github.com/Kornetas/api-forge",
+    website: "https://github.com/Kornetas/api-forge",
+    techs: ["Node.js", "Express", "MongoDB", "Jest", "Supertest"],
+  },
+  {
+    name: "GraphQL Project in Progress",
+    description:
+      "his project is currently under development. The stack includes React and Next.js for the frontend, with module CSS for styling. The backend uses GraphQL and Apollo Server, with PostgreSQL as the database. End-to-end testing is performed using Playwright. The main goal is to build a modern, scalable web application with real-time data handling.",
+    github: "https://github.com/Kornetas",
+    website: "https://github.com/Kornetas",
     techs: [
-      "JavaScript",
+      "Javascript",
       "React",
-      "Tailwind CSS",
-      "Node.js",
-      "Express",
-      "MongoDB",
+      "Next.js",
+      "GraphQL",
+      "PostgreSQL",
+      "Playwright",
     ],
-  },
-  {
-    name: "DevFinder",
-    description:
-      "Developer search application leveraging the GitHub API. Effortlessly filter, follow, and discover ideal developers for your team. Fast, modern, and visually stunning.",
-    github: "https://github.com/arekdev/devfinder",
-    website: "https://devfinder.vercel.app",
-    techs: ["React", "Axios", "RESTful API"],
-  },
-  {
-    name: "SQL Dashboard",
-    description:
-      "Data analytics dashboard using PostgreSQL, Chart.js, and Bootstrap. Features interactive charts, real-time summaries, and fully customizable filtering.",
-    github: "https://github.com/arekdev/sql-dashboard",
-    website: "https://sqldashboard.vercel.app",
-    techs: ["PostgreSQL", "Chart.js", "Bootstrap"],
   },
 ];
 
@@ -110,7 +110,7 @@ export default function Projects() {
       {showProjects && (
         <StaggeredList from="bottom" stagger={0.9} duration={0.5}>
           <a
-            href="https://github.com/arekdev"
+            href="https://github.com/Kornetas"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-10 px-8 py-4 bg-transparent border-2 border-cyan-400 rounded-xl text-cyan-400 font-bold text-lg hover:bg-cyan-400 hover:text-[#181828] transition shadow-lg mx-auto block"
