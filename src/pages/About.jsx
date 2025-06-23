@@ -145,7 +145,8 @@ export default function About() {
               <iframe
                 src="/BloomTech Certificate.pdf"
                 title="BloomTech Certificate"
-                className="w-full h-[220px] sm:h-[340px] md:h-[580px] lg:h-[760px] rounded-xl border-none"
+                className="w-full min-h-[300px] aspect-video rounded-xl border-none"
+                style={{ maxWidth: "100%" }}
               ></iframe>
             </div>
           </div>
