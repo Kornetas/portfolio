@@ -56,10 +56,17 @@ export default function About() {
                 <br />
                 <br />
                 Driven by this curiosity, I explored both front-end and back-end
-                technologies, building practical projects along the way.{" "}
-                <span className="font-semibold text-cyan-400">
-                  At BloomTech
-                </span>
+                technologies, building practical projects along the way. At{" "}
+                <a
+                  href="https://www.bloomtech.com/courses/full-stack-web-development"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block"
+                >
+                  <span className="font-semibold text-cyan-400 transition-all duration-200 hover:scale-110 hover:text-cyan-300 hover:underline hover:underline-offset-4">
+                    BloomTech
+                  </span>
+                </a>
                 , I gained hands-on experience with modern frameworks and
                 essential tools that power today’s web applications:
               </p>
@@ -80,12 +87,12 @@ export default function About() {
             </div>
 
             <div className="bg-[#181828] border border-cyan-800 rounded-2xl shadow-lg p-7 flex flex-col">
-              {/* Experience - Warehouse Operative */}
+              {/* Experience - Logistics Operative */}
               <h3 className="text-2xl text-white font-bold mb-2">
-                Experience - Warehouse Operative
+                Experience - Logistics Operative
               </h3>
               <p className="text-gray-200 text-base mb-4">
-                Worked in high-volume warehouses across the 2016 (UK), 2018–2024
+                Worked in high-volume facilities across the 2016 (UK), 2018–2024
                 (Germany, seasonal) , gaining practical experience in fast-paced
                 logistics environments:
               </p>
@@ -125,7 +132,8 @@ export default function About() {
                 rel="noopener noreferrer"
                 className="inline-block font-bold text-cyan-400 underline underline-offset-4 hover:text-cyan-300 transition-transform duration-300 hover:scale-105 animate-bounce-x mb-2"
               >
-                Bloom Institute of Technology | Online Coding Bootcamp
+                BloomTech - Institute of Technology | 12-Month Immersive Online
+                Coding Bootcamp
               </a>
               <span className="ml-2 text-gray-300">| 2025</span>
               <span className="block mt-1 mb-5">

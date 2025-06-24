@@ -8,9 +8,13 @@
 }
 
 /* Ensure scrollbar does not shift layout */
-html {
+html,
+body {
   scrollbar-gutter: stable;
   overflow-y: scroll;
+  background-color: #111827;
+  color: #fff;
+  min-height: 100vh;
 }
 
 /* Animations for mobile navigation slide-down/up */
