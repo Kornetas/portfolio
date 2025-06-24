@@ -27,7 +27,22 @@
     <meta property="og:url" content="https://kornet.dev/" />
     <meta property="og:image" content="https://kornet.dev/og-image.jpg" />
 
+    <!-- Sets the browser toolbar color on mobile devices -->
     <meta name="theme-color" content="#111827" />
+
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-TFS4CQ42GT");
+    </script>
   </head>
   <body>
     <div id="root"></div>

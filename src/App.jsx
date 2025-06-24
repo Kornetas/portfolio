@@ -7,10 +7,14 @@ import Skills from "./pages/Skills";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import BackToTopButton from "./components/BackToTopButton";
+import Analytics from "./components/Analytics";
+
 
 function App() {
   return (
     <Router>
+      {/* Google Analytics */}
+      <Analytics />
       <div className="min-h-screen bg-gray-900 text-white">
         {/* Main site navigation bar */}
         <Navbar />
