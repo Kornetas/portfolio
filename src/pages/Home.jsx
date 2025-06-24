@@ -55,7 +55,7 @@ export default function Home() {
             <div className="flex gap-4 sm:gap-6 flex-col sm:flex-row items-center md:items-start">
               {/* Download Resume button */}
               <a
-                href="/Arkadiusz Rak - Full Stack  Web Developer.pdf"
+                href="/Arkadiusz Rak - Full Stack  Web Developer CV EN.pdf"
                 download
                 className="mt-4 px-10 py-5 border-2 border-pink-500 rounded-xl text-pink-400 font-bold hover:bg-pink-400 hover:text-black transition shadow-lg animate-bounce"
               >
