@@ -42,6 +42,7 @@ import {
   SiFigma,
   SiWordpress,
 } from "react-icons/si";
+import Seo from "../components/Seo";
 
 // Main skills list with icons
 const skills = [
@@ -151,99 +152,137 @@ export default function Skills() {
       );
 
   return (
-    <section className="flex flex-col items-center min-h-[60vh] px-4 py-8">
-      {/* Animated search box for filtering skills */}
-      {showSearchBox && (
-        <StaggeredList
-          from="bottom"
-          stagger={0.12}
-          duration={0.4}
-          className="w-full"
-        >
-          <div className="relative w-full max-w-xs mx-auto">
-            <input
-              type="text"
-              className="bg-[#181828] text-white rounded-xl px-4 py-2 border border-cyan-400 focus:outline-none w-full pr-10"
-              placeholder="Search skills..."
-              value={query}
-              onChange={(e) => {
-                setQuery(e.target.value);
-                setShowAll(false);
-              }}
-            />
+    <>
+      <Seo
+        title="Skills | Arkadiusz Rak – Full Stack Web Developer"
+        description="Discover the full stack and modern web technologies used by Arkadiusz Rak: React, Node.js, SQL, Tailwind, testing tools, and more."
+        url="https://kornet.dev/skills"
+        canonical="https://kornet.dev/skills"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Person",
+          name: "Arkadiusz Rak",
+          jobTitle: "Full Stack Web Developer",
+          url: "https://kornet.dev/skills",
+          knowsAbout: [
+            "JavaScript",
+            "React",
+            "Redux",
+            "Node.js",
+            "Express",
+            "SQL",
+            "PostgreSQL",
+            "MongoDB",
+            "GraphQL",
+            "Next.js",
+            "Vite",
+            "Tailwind CSS",
+            "Bootstrap",
+            "REST API",
+            "Git",
+            "Jest",
+            "Cypress",
+            "Testing",
+            "Web Development",
+            "UI/UX",
+          ],
+        }}
+      />
 
-            {/* Button to clear search input */}
-            {query && (
-              <button
-                type="button"
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-cyan-400 hover:text-cyan-200 text-xl"
-                onClick={() => {
-                  setQuery("");
-                  setShowAll(true);
-                }}
-                aria-label="Clear"
-              >
-                <FaTimes />
-              </button>
-            )}
-          </div>
-        </StaggeredList>
-      )}
-
-      {/* "Show All" button */}
-      {showShowAll && (
-        <StaggeredList
-          from="bottom"
-          stagger={0.12}
-          duration={0.4}
-          className="w-full"
-        >
-          <button
-            onClick={() => {
-              setShowAll(true);
-              setQuery("");
-            }}
-            className="mt-4 text-cyan-200 hover:text-cyan-400 font-mono text-lg transition mx-auto block"
+      <section className="flex flex-col items-center min-h-[60vh] px-4 py-8">
+        {/* Animated search box for filtering skills */}
+        {showSearchBox && (
+          <StaggeredList
+            from="bottom"
+            stagger={0.12}
+            duration={0.4}
+            className="w-full"
           >
-            Show All
-          </button>
-        </StaggeredList>
-      )}
+            <div className="relative w-full max-w-xs mx-auto">
+              <input
+                type="text"
+                className="bg-[#181828] text-white rounded-xl px-4 py-2 border border-cyan-400 focus:outline-none w-full pr-10"
+                placeholder="Search skills..."
+                value={query}
+                onChange={(e) => {
+                  setQuery(e.target.value);
+                  setShowAll(false);
+                }}
+              />
 
-      <div className="relative flex flex-col justify-center items-center w-full min-h-[200px] max-w-6xl">
-        {/* Show message if no skills match the filter */}
-        {showSkills &&
-          (filteredSkills.length === 0 ? (
-            <div className="text-red-600 text-lg font-semibold py-8 text-center mt-[-100px]">
-              Sorry, I don’t know this skill yet – but I’m always learning and
-              leveling up!
-            </div>
-          ) : (
-            // Animated grid of skill icons/badges
-            <StaggeredList
-              key={query + showAll}
-              from="bottom"
-              stagger={0.07}
-              duration={0.5}
-              className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 w-full mt-16"
-            >
-              {filteredSkills.map((skill) => (
-                <div
-                  key={skill.name}
-                  className="flex flex-col items-center bg-gray-800 rounded-xl p-4 border border-gray-700 shadow hover:shadow-md transition hover:scale-105"
+              {/* Button to clear search input */}
+              {query && (
+                <button
+                  type="button"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-cyan-400 hover:text-cyan-200 text-xl"
+                  onClick={() => {
+                    setQuery("");
+                    setShowAll(true);
+                  }}
+                  aria-label="Clear"
                 >
-                  {/* Skill icon (if available) */}
-                  {skill.icon && (
-                    <div className="text-4xl mb-2">{skill.icon}</div>
-                  )}
-                  <div className="text-white font-medium text-center text-sm">
-                    {skill.name}
+                  <FaTimes />
+                </button>
+              )}
+            </div>
+          </StaggeredList>
+        )}
+
+        {/* "Show All" button */}
+        {showShowAll && (
+          <StaggeredList
+            from="bottom"
+            stagger={0.12}
+            duration={0.4}
+            className="w-full"
+          >
+            <button
+              onClick={() => {
+                setShowAll(true);
+                setQuery("");
+              }}
+              className="mt-4 text-cyan-200 hover:text-cyan-400 font-mono text-lg transition mx-auto block"
+            >
+              Show All
+            </button>
+          </StaggeredList>
+        )}
+
+        <div className="relative flex flex-col justify-center items-center w-full min-h-[200px] max-w-6xl">
+          {/* Show message if no skills match the filter */}
+          {showSkills &&
+            (filteredSkills.length === 0 ? (
+              <div className="text-red-600 text-lg font-semibold py-8 text-center mt-[-100px]">
+                Sorry, I don’t know this skill yet – but I’m always learning and
+                leveling up!
+              </div>
+            ) : (
+              // Animated grid of skill icons/badges
+              <StaggeredList
+                key={query + showAll}
+                from="bottom"
+                stagger={0.07}
+                duration={0.5}
+                className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 w-full mt-16"
+              >
+                {filteredSkills.map((skill) => (
+                  <div
+                    key={skill.name}
+                    className="flex flex-col items-center bg-gray-800 rounded-xl p-4 border border-gray-700 shadow hover:shadow-md transition hover:scale-105"
+                  >
+                    {/* Skill icon (if available) */}
+                    {skill.icon && (
+                      <div className="text-4xl mb-2">{skill.icon}</div>
+                    )}
+                    <div className="text-white font-medium text-center text-sm">
+                      {skill.name}
+                    </div>
                   </div>
-                </div>
-              ))}
-            </StaggeredList>
-          ))}
-      </div>
-    </section>
+                ))}
+              </StaggeredList>
+            ))}
+        </div>
+      </section>
+    </>
   );
 }
