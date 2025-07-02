@@ -8,7 +8,7 @@ export default function HeroAvatar({ className = "", variant = "desktop" }) {
       {/* Avatar image, styling changes based on the variant (desktop or mobile) */}
       <img
         src={avatar}
-        alt="Arek"
+        alt="Arkadiusz Rak – Full Stack Web Developer"
         className={
           variant === "desktop"
             ? "object-contain md:h-[80vh] md:max-h-[1050px] w-auto opacity-90 z-10 select-none pointer-events-none hero-avatar-filter"

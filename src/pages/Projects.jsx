@@ -16,7 +16,7 @@ const projects = [
   {
     name: "Portfolio of Arkadiusz Rak",
     description:
-      "I built a personal portfolio website with a modern, fully responsive design using React and Vite. The site highlights my skills, projects, and experience as a Full Stack Web Developer. It features animated transitions, a mobile-friendly layout, and an eye-catching landing page. Visitors can browse my work, download my resume, and contact me.",
+      "I built a personal portfolio website with a modern, fully responsive design using React and Vite. The site highlights my skills, projects, and experience as a Full Stack Web Developer, and is optimized for SEO with semantic HTML and proper meta tags. It features animated transitions, a mobile-friendly layout, and an eye-catching landing page. Visitors can browse my work, download my resume, and contact me.",
     github: "https://github.com/Kornetas/portfolio",
     website: "https://kornet.dev",
     techs: ["HTML5", "JavaScript", "React", "Tailwind CSS"],

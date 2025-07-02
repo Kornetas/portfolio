@@ -40,7 +40,6 @@ import {
   SiNetlify,
   SiVercel,
   SiFigma,
-  SiWordpress,
 } from "react-icons/si";
 import Seo from "../components/Seo";
 
@@ -67,7 +66,6 @@ const skills = [
   },
   { name: "GraphQL", icon: <SiGraphql className="text-pink-500" /> },
   { name: "RESTful API", icon: <FaDatabase className="text-blue-300" /> },
-  { name: "WordPress", icon: <SiWordpress className="text-blue-500" /> },
   { name: "Bootstrap", icon: <FaBootstrap className="text-purple-600" /> },
   { name: "PostgreSQL", icon: <SiPostgresql className="text-blue-700" /> },
   { name: "MongoDB", icon: <SiMongodb className="text-green-600" /> },
@@ -100,6 +98,8 @@ const skills = [
 
 // Skills without icons (just names)
 const skillsNoIcon = [
+  "Zustand",
+  "SEO",
   "Webpack",
   "VS Code",
   "Morgan",
