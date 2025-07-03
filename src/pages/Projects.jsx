@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import StaggeredList from "../components/StaggeredList";
 import ProjectCard from "../components/ProjectCard";
 import Seo from "../components/Seo";
@@ -49,21 +49,6 @@ const projects = [
 export default function Projects() {
   // Show the project cards after a short delay (for entrance animation)
   const [showProjects, setShowProjects] = useState(false);
-
-  // Refs to control font size of project descriptions based on content height
-  const descRefs = useRef([]);
-
-  // Dynamically adjust description font size for each project card
-  useEffect(() => {
-    descRefs.current.forEach((desc) => {
-      if (!desc) return;
-      desc.style.fontSize = "1.125rem";
-      desc.style.lineHeight = "1.5";
-      if (desc.scrollHeight > 60) desc.style.fontSize = "1rem";
-      if (desc.scrollHeight > 75) desc.style.fontSize = "0.95rem";
-      if (desc.scrollHeight > 90) desc.style.fontSize = "0.88rem";
-    });
-  }, []);
 
   // Fade-in animation for the projects section
   useEffect(() => {
@@ -122,12 +107,8 @@ export default function Projects() {
               duration={0.5}
               className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-14"
             >
-              {projects.map((project, idx) => (
-                <ProjectCard
-                  key={project.name}
-                  project={project}
-                  descRef={(el) => (descRefs.current[idx] = el)}
-                />
+              {projects.map((project) => (
+                <ProjectCard key={project.name} project={project} />
               ))}
             </StaggeredList>
           )}
