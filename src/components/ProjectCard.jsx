@@ -5,10 +5,10 @@ export default function ProjectCard({ project }) {
     <div className="bg-[#232336] rounded-2xl p-10 shadow-lg flex flex-col h-full border border-cyan-800 min-h-[330px] md:min-h-[380px] w-full max-w-3xl mx-auto">
       {/* Main card container for a single project */}
       <div>
-        <h3 className="text-3xl md:text-4xl font-extrabold text-white mb-3 text-center">
+        <h3 className="text-3xl md:text-4xl font-extrabold text-white mb-3 text-left md:text-center">
           {project.name}
         </h3>
-        <p className="text-gray-300 mb-4 min-h-[48px] text-center">
+        <p className="text-gray-300 mb-4 min-h-[48px] text-left md:text-center">
           {project.description}
         </p>
       </div>
