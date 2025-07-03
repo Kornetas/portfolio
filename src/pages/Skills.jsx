@@ -189,7 +189,7 @@ export default function Skills() {
         }}
       />
 
-      <section className="flex flex-col items-center min-h-[60vh] px-4 py-8">
+      <section className="flex flex-col items-center min-h-[80vh] px-4 py-8">
         {/* Animated search box for filtering skills */}
         {showSearchBox && (
           <StaggeredList
@@ -248,7 +248,10 @@ export default function Skills() {
           </StaggeredList>
         )}
 
-        <div className="relative flex flex-col justify-center items-center w-full min-h-[200px] max-w-6xl">
+        <div
+          className="relative flex flex-col justify-center items-center w-full min-h-[200px] max-w-6xl"
+          style={{ minHeight: "1300px" }}
+        >
           {/* Show message if no skills match the filter */}
           {showSkills &&
             (filteredSkills.length === 0 ? (

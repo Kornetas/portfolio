@@ -93,7 +93,7 @@ export default function Projects() {
         }}
       />
 
-      <section className="flex flex-col items-center min-h-[60vh] px-4 py-12">
+      <section className="flex flex-col items-center min-h-[80vh] px-4 py-12">
         {/* Section heading */}
         <StaggeredList
           from="bottom"
@@ -110,37 +110,42 @@ export default function Projects() {
           </p>
         </StaggeredList>
 
-        {/* Animated grid of project cards */}
-        {showProjects && (
-          <StaggeredList
-            from="bottom"
-            stagger={0.5}
-            duration={0.5}
-            className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-14"
-          >
-            {projects.map((project, idx) => (
-              <ProjectCard
-                key={project.name}
-                project={project}
-                descRef={(el) => (descRefs.current[idx] = el)}
-              />
-            ))}
-          </StaggeredList>
-        )}
-
-        {/* GitHub link at the bottom */}
-        {showProjects && (
-          <StaggeredList from="bottom" stagger={0.9} duration={0.5}>
-            <a
-              href="https://github.com/Kornetas"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-10 px-8 py-4 bg-transparent border-2 border-cyan-400 rounded-xl text-cyan-400 font-bold text-lg hover:bg-cyan-400 hover:text-[#181828] transition shadow-lg mx-auto block"
+        <div
+          className="w-full flex flex-col items-center"
+          style={{ minHeight: "1150px" }}
+        >
+          {/* Animated grid of project cards */}
+          {showProjects && (
+            <StaggeredList
+              from="bottom"
+              stagger={0.5}
+              duration={0.5}
+              className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-14"
             >
-              View More on GitHub
-            </a>
-          </StaggeredList>
-        )}
+              {projects.map((project, idx) => (
+                <ProjectCard
+                  key={project.name}
+                  project={project}
+                  descRef={(el) => (descRefs.current[idx] = el)}
+                />
+              ))}
+            </StaggeredList>
+          )}
+
+          {/* GitHub link at the bottom */}
+          {showProjects && (
+            <StaggeredList from="bottom" stagger={0.9} duration={0.5}>
+              <a
+                href="https://github.com/Kornetas"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-10 px-8 py-4 bg-transparent border-2 border-cyan-400 rounded-xl text-cyan-400 font-bold text-lg hover:bg-cyan-400 hover:text-[#181828] transition shadow-lg mx-auto block"
+              >
+                View More on GitHub
+              </a>
+            </StaggeredList>
+          )}
+        </div>
       </section>
     </>
   );

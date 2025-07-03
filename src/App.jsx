@@ -8,32 +8,36 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import BackToTopButton from "./components/BackToTopButton";
 import Analytics from "./components/Analytics";
-
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <Router>
       {/* Google Analytics */}
       <Analytics />
-      <div className="min-h-screen bg-gray-900 text-white">
+      <div className="flex flex-col min-h-screen bg-gray-900 text-white">
         {/* Main site navigation bar */}
         <Navbar />
 
         {/* Page routes */}
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/skills" element={<Skills />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <div className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/skills" element={<Skills />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </div>
 
         {/* Floating "Back to Top" button */}
         <BackToTopButton />
+        <Footer />
       </div>
     </Router>
   );
 }
 
 export default App;
+
