@@ -39,27 +39,28 @@ function Contact() {
       />
 
       <section className="flex flex-col items-center justify-center min-h-[80vh] px-4 py-12">
-        {/* "Copied to clipboard!" notification */}
-        {copied && (
-          <div className="fixed top-8 inset-x-0 mx-auto z-50 bg-cyan-500 text-white text-lg px-6 py-2 rounded-lg shadow-lg font-bold animate-slideDownUp w-max transition-opacity duration-300">
-            Copied to clipboard!
-          </div>
-        )}
+        <div className="w-full max-w-4xl" style={{ minHeight: "700px" }}>
+          {/* "Copied to clipboard!" notification */}
+          {copied && (
+            <div className="fixed top-8 inset-x-0 mx-auto z-50 bg-cyan-500 text-white text-lg px-6 py-2 rounded-lg shadow-lg font-bold animate-slideDownUp w-max transition-opacity duration-300">
+              Copied to clipboard!
+            </div>
+          )}
 
-        {/* Section heading */}
-        <StaggeredList
-          from="bottom"
-          duration={0.7}
-          className="flex flex-col items-center w-full"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold mb-28 text-white text-center">
-            Choose <span className="text-cyan-400">your</span> way to{" "}
-            <span className="text-cyan-400">contact me</span>
-          </h2>
-        </StaggeredList>
+          {/* Section heading */}
+          <StaggeredList
+            from="bottom"
+            duration={0.7}
+            className="flex flex-col items-center w-full"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-28 text-white text-center">
+              Choose <span className="text-cyan-400">your</span> way to{" "}
+              <span className="text-cyan-400">contact me</span>
+            </h2>
+          </StaggeredList>
 
-        {/* Contact methods (LinkedIn, GitHub, E-mail, copy email button) */}
-        <div className="w-full max-w-4xl" style={{ minHeight: "500px" }}>
+          {/* Contact methods (LinkedIn, GitHub, E-mail, copy email button) */}
+
           <StaggeredList
             from="bottom"
             stagger={0.3}
@@ -73,7 +74,7 @@ function Contact() {
               className="flex items-center gap-2 px-8 py-4 rounded-full border-2 border-white text-white font-bold text-lg transition hover:border-cyan-400 hover:text-cyan-400 focus:outline-none"
             >
               <FaLinkedin className="text-white text-2xl transition" />
-              Linkedin
+              LinkedIn
             </a>
             {/* GitHub */}
             <a
