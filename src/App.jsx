@@ -9,6 +9,8 @@ import NotFound from "./pages/NotFound";
 import BackToTopButton from "./components/BackToTopButton";
 import Analytics from "./components/Analytics";
 import Footer from "./components/Footer";
+import PrivacyBanner from "./components/PrivacyBanner";
+import Privacy from "./pages/Privacy";
 
 function App() {
   return (
@@ -28,16 +30,17 @@ function App() {
             <Route path="/skills" element={<Skills />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
+            <Route path="/privacy" element={<Privacy />} />
           </Routes>
         </div>
 
         {/* Floating "Back to Top" button */}
         <BackToTopButton />
         <Footer />
+        <PrivacyBanner />
       </div>
     </Router>
   );
 }
 
 export default App;
-

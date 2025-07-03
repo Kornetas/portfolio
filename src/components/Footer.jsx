@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 
 export default function Footer() {
@@ -33,9 +34,9 @@ export default function Footer() {
         </div>
 
         <div className="text-sl">
-          <a href="/privacy" className="hover:underline">
-            Privacy &amp; Legal
-          </a>
+          <Link to="/privacy" className="hover:underline">
+            Privacy & Legal
+          </Link>
         </div>
       </div>
     </footer>
