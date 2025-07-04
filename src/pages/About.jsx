@@ -10,7 +10,6 @@ export default function About() {
   // Show the boxes after a delay for a smooth entrance animation
   useEffect(() => {
     const timeout = setTimeout(() => setShowBoxes(true), 1000);
-    window.scrollTo(0, 0);
     return () => clearTimeout(timeout);
   }, []);
 
@@ -180,7 +179,7 @@ export default function About() {
                 <iframe
                   src="/BloomTech Certificate.pdf"
                   title="BloomTech Certificate"
-                  className="hidden xl:block w-full aspect-video rounded-xl border-none"
+                  className="hidden xl:block w-full min-h-[340px] md:min-h-[500px] lg:min-h-[790px] aspect-video rounded-xl border-none"
                   style={{ maxWidth: "100%" }}
                 ></iframe>
 
