@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Privacy() {
   return (
     <div className="max-w-2xl mx-auto px-4 py-10 text-white">
@@ -13,6 +15,12 @@ export default function Privacy() {
           arek93r@gmail.com
         </a>
       </p>
+      <Link
+        to="/"
+        className="inline-block mt-10 mx-auto px-6 py-3 sm:px-10 sm:py-4 rounded-3xl bg-blue-700 hover:bg-blue-500 text-base sm:text-xl font-bold text-white shadow-2xl transition-all text-center"
+      >
+        ← Back to Home
+      </Link>
     </div>
   );
 }

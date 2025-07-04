@@ -34,7 +34,7 @@ export default function Footer() {
         </div>
 
         <div className="text-sl">
-          <Link to="/privacy" className="hover:underline">
+          <Link to="/privacy" className="hover:underline hover:text-green-400 transition">
             Privacy & Legal
           </Link>
         </div>
