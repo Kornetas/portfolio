@@ -180,7 +180,7 @@ export default function About() {
                 <iframe
                   src="/BloomTech Certificate.pdf"
                   title="BloomTech Certificate"
-                  className="hidden md:block w-full aspect-video rounded-xl border-none"
+                  className="hidden xl:block w-full aspect-video rounded-xl border-none"
                   style={{ maxWidth: "100%" }}
                 ></iframe>
 
@@ -188,7 +188,7 @@ export default function About() {
                 <img
                   src="/Certificate.png"
                   alt="Certificate"
-                  className="block md:hidden w-full max-w-full h-auto rounded-xl"
+                  className="block xl:hidden w-full max-w-full h-auto rounded-xl"
                 />
 
                 {/* Link to View the PDF certificate */}
