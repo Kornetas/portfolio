@@ -8,11 +8,11 @@ function Navbar() {
 
   return (
     <nav className="bg-gray-950 text-white shadow-lg">
-      <div className="max-w-screen-2xl mx-auto flex justify-between items-center py-3 px-4 md:px-8">
+      <div className="max-w-screen-2xl mx-auto flex justify-between items-center py-6 px-4 md:px-8">
         {/* Logo / Home link */}
         <NavLink
           to="/"
-          className="text-3xl md:text-4xl font-bold tracking-widest text-white hover:text-neon-blue transition"
+          className="text-2xl md:text-4xl font-bold tracking-widest text-white hover:text-neon-blue transition"
           end
         >
           kornet.dev
@@ -22,7 +22,7 @@ function Navbar() {
           <NavLink
             to="/"
             className={({ isActive }) =>
-              "text-xl transition " +
+              "text-2xl transition " +
               (isActive ? "text-neon-blue font-bold" : "hover:text-neon-blue")
             }
             end
@@ -32,7 +32,7 @@ function Navbar() {
           <NavLink
             to="/about"
             className={({ isActive }) =>
-              "text-xl transition " +
+              "text-2xl transition " +
               (isActive ? "text-neon-blue font-bold" : "hover:text-neon-blue")
             }
           >
@@ -41,7 +41,7 @@ function Navbar() {
           <NavLink
             to="/projects"
             className={({ isActive }) =>
-              "text-xl transition " +
+              "text-2xl transition " +
               (isActive ? "text-neon-blue font-bold" : "hover:text-neon-blue")
             }
           >
@@ -50,7 +50,7 @@ function Navbar() {
           <NavLink
             to="/skills"
             className={({ isActive }) =>
-              "text-xl transition " +
+              "text-2xl transition " +
               (isActive ? "text-neon-blue font-bold" : "hover:text-neon-blue")
             }
           >
@@ -59,7 +59,7 @@ function Navbar() {
           <NavLink
             to="/contact"
             className={({ isActive }) =>
-              "text-xl transition " +
+              "text-2xl transition " +
               (isActive ? "text-neon-blue font-bold" : "hover:text-neon-blue")
             }
           >
