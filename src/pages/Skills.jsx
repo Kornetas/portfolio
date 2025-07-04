@@ -248,10 +248,7 @@ export default function Skills() {
           </StaggeredList>
         )}
 
-        <div
-          className="relative flex flex-col justify-center items-center w-full min-h-[200px] max-w-6xl"
-          style={{ minHeight: "1300px" }}
-        >
+        <div className="relative flex flex-col justify-center items-center w-full min-h-[200px] max-w-6xl">
           {/* Show message if no skills match the filter */}
           {showSkills &&
             (filteredSkills.length === 0 ? (

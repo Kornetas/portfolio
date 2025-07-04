@@ -97,7 +97,7 @@ export default function Projects() {
 
         <div
           className="w-full flex flex-col items-center"
-          style={{ minHeight: "1150px" }}
+          style={{ minHeight: "950px" }}
         >
           {/* Animated grid of project cards */}
           {showProjects && (
