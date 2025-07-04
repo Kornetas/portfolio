@@ -60,11 +60,11 @@ export default function Home() {
               </div>
 
               {/* Short description */}
-              <p className="text-gray-200 mb-1 sm:mb-1 leading-tight text-center md:text-left text-[clamp(1rem,1.2vw,1.2rem)]">
+              <p className="text-gray-200 mb-1 sm:mb-1 text-center md:text-left text-[clamp(1rem,1.2vw,1.2rem)]">
                 With a passion for detail.
               </p>
 
-              <p className="text-red-600 md:text-lg sm:text-lg max-w-xl mb-4 text-center md:text-left">
+              <p className="text-red-600 mb-4 sm:mb-4 text-center md:text-left text-[clamp(1rem,1.2vw,1.2rem)]">
                 Modern code, fresh design, and constant learning are my fuel.
               </p>
 
