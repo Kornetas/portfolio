@@ -19,7 +19,7 @@ export default function HeroAvatar({ className = "", variant = "desktop" }) {
       {/* Gradient overlay for the desktop variant */}
       {variant === "desktop" && (
         <div className="absolute inset-0 z-0 pointer-events-none">
-          <div className="w-full h-full rounded-3xl blur-2xl bg-gradient-to-br from-black/30 via-white/10 to-gray-900/40"></div>
+          <div className="w-full h-full rounded-3xl blur-3xl bg-gradient-to-br from-black/30 via-white/10 to-gray-900/40"></div>
         </div>
       )}
     </div>

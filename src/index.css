@@ -93,7 +93,7 @@ body {
 }
 
 /* Custom hero section layout adjustments for extra-large screens */
-@media (min-width: 1500px) {
+@media (min-width: 1800px) {
   .hero-section {
     transform: translateX(15%);
   }
@@ -104,25 +104,37 @@ body {
   }
 }
 
+/* Laptops and desktops stink: 1200px–1799px */
+@media (min-width: 1200px) and (max-width: 1799px) {
+  .hero-section {
+    transform: translateX(clamp(7vw, 7vw, 5vw));
+  }
+
+  .hero-text {
+    margin-left: clamp(-120px, -10vw, -120px);
+    margin-top: clamp(-220px, -8vw, -320px);
+  }
+}
+
+/* Reset transforms for medium screens */
 @media (max-width: 1199px) {
-  /* Reset transforms for medium screens */
   .hero-section {
     transform: none;
   }
   .hero-text {
-    margin-left: 0;
-    margin-top: 0;
+    margin-left: -40px;
+    margin-top: -200px;
   }
 }
 
 /* Reset transforms for mobile/tablet */
 @media (max-width: 767px) {
   .hero-section {
-    transform: none !important;
+    transform: none;
   }
   .hero-text {
-    margin-left: 0 !important;
-    margin-top: 0 !important;
+    margin-left: 0;
+    margin-top: 0;
   }
 }
 
