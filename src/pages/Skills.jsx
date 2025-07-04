@@ -189,7 +189,7 @@ export default function Skills() {
         }}
       />
 
-      <section className="flex flex-col items-center min-h-[80vh] px-4 py-8">
+      <section className="flex flex-col items-center min-h-[80vh] px-4 py-20">
         {/* Animated search box for filtering skills */}
         {showSearchBox && (
           <StaggeredList
