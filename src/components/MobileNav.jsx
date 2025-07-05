@@ -23,7 +23,7 @@ export default function MobileNav({ open, setOpen }) {
     setTimeout(() => {
       setOpen(false);
       setClosing(false);
-    }, 1000);
+    }, 500);
   };
 
   return (
@@ -46,7 +46,7 @@ export default function MobileNav({ open, setOpen }) {
           )}
         >
           {/* Staggered animated list of nav links */}
-          <StaggeredList from="top" stagger={0.09}>
+          <StaggeredList from="top" stagger={0.04}>
             {navLinks.map((link) => (
               <Link
                 key={link.to}
