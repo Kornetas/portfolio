@@ -2,7 +2,7 @@ import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 export default function ProjectCard({ project }) {
   return (
-    <div className="bg-[#232336] rounded-2xl p-10 shadow-lg flex flex-col h-full border border-cyan-800 min-h-[330px] md:min-h-[380px] w-full max-w-3xl mx-auto">
+    <div className="bg-[#181828] rounded-2xl p-10 shadow-lg flex flex-col h-full border border-cyan-800 min-h-[330px] md:min-h-[380px] w-full max-w-3xl mx-auto">
       {/* Main card container for a single project */}
       <div>
         <h3 className="text-3xl md:text-3xl font-extrabold text-white mb-3 text-left md:text-center">
