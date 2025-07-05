@@ -63,41 +63,44 @@ function Contact() {
         <StaggeredList
           from="bottom"
           stagger={0.3}
-          className="flex flex-wrap gap-6 items-center justify-center w-full max-w-4xl"
+          className="flex flex-col px-3 md:flex-row md:flex-wrap gap-4 items-stretch md:items-center justify-center w-full"
         >
           {/* LinkedIn */}
           <a
             href="https://www.linkedin.com/in/arkadiusz-rak-807272306"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-8 py-4 rounded-full border-2 border-white text-white font-bold text-lg transition hover:border-cyan-400 hover:text-cyan-400 focus:outline-none"
+            className="flex items-center justify-start sm:justify-center gap-3 px-8 py-4 rounded-full border-2 border-white text-white font-bold text-2xl transition hover:border-cyan-400 hover:text-cyan-400 focus:outline-none w-full sm:w-auto"
           >
-            <FaLinkedin className="text-white text-2xl transition" />
-            LinkedIn
+            <FaLinkedin className="text-white text-3xl transition" />
+            <span className="flex-1 text-center">LinkedIn</span>
           </a>
+
           {/* GitHub */}
           <a
             href="https://github.com/Kornetas"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-8 py-4 rounded-full border-2 border-white text-white font-bold text-lg transition hover:border-cyan-400 hover:text-cyan-400 focus:outline-none"
+            className="flex items-center justify-start sm:justify-center gap-3 px-8 py-4 rounded-full border-2 border-white text-white font-bold text-2xl transition hover:border-cyan-400 hover:text-cyan-400 focus:outline-none w-full sm:w-auto"
           >
-            <FaGithub className="text-white text-2xl transition" />
-            GitHub
+            <FaGithub className="text-white text-3xl transition" />
+            <span className="flex-1 text-center">GitHub</span>
           </a>
+
           {/* E-mail */}
           <a
             href="mailto:arek93r@gmail.com"
-            className="flex items-center gap-2 px-8 py-4 rounded-full border-2 border-white text-white font-bold text-lg transition hover:border-cyan-400 hover:text-cyan-400 focus:outline-none"
+            className="flex items-center justify-start sm:justify-center gap-3 px-8 py-4 rounded-full border-2 border-white text-white font-bold text-2xl transition hover:border-cyan-400 hover:text-cyan-400 focus:outline-none w-full sm:w-auto"
           >
-            <MdEmail className="text-white text-2xl transition" />
-            E-mail
+            <MdEmail className="text-white text-3xl transition" />
+            <span className="flex-1 text-center">E-mail</span>
           </a>
+
           {/* Copy email button */}
           <button
             type="button"
             onClick={handleCopy}
-            className="flex items-center gap-2 px-8 py-4 rounded-full border-2 border-white text-white font-bold text-lg bg-transparent transition hover:border-cyan-400 hover:text-cyan-400 focus:outline-none relative"
+            className="flex items-center justify-center gap-3 px-8 py-4 rounded-full border-2 border-white text-white font-bold text-2xl bg-transparent transition hover:border-cyan-400 hover:text-cyan-400 focus:outline-none relative w-full"
           >
             {email}
           </button>
