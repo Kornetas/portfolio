@@ -77,14 +77,6 @@ export default function Home() {
                 >
                   Download Resume (CV)
                 </a>
-                {/* Navigate to contact page button */}
-                <button
-                  onClick={() => navigate("/contact")}
-                  className="mt-2 px-4 py-3 rounded-xl font-bold border-2 border-cyan-400 text-cyan-400 shadow-xl hover:bg-cyan-400 hover:text-[#181828] transition text-lg"
-                  type="button"
-                >
-                  Let's Talk
-                </button>
               </div>
             </StaggeredList>
           </div>
