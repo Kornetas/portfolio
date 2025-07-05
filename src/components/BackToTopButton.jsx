@@ -5,9 +5,9 @@ function BackToTopButton() {
   // Controls whether the "back to top" button is visible
   const [show, setShow] = useState(false);
 
-  // Show the button only when the user has scrolled down 150px or more
+  // Show the button only when the user has scrolled down 300px or more
   useEffect(() => {
-    const onScroll = () => setShow(window.scrollY > 150);
+    const onScroll = () => setShow(window.scrollY > 300);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
