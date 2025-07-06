@@ -198,7 +198,20 @@ export default function Skills() {
         }}
       />
 
-      <section className="flex flex-col items-center min-h-[80vh] px-4 py-20">
+      <section className="flex flex-col items-center min-h-[80vh] px-4 py-12">
+        {/* Animated header with h1 and underline */}
+        <StaggeredList
+          from="bottom"
+          stagger={0.14}
+          duration={0.45}
+          className="w-full flex flex-col items-center"
+        >
+          <h1 className="text-3xl md:text-4xl font-bold mb-3 text-white text-center hover:text-cyan-400 transition">
+            Skills & Tech Stack
+          </h1>
+          <div className="mx-auto h-1 w-16 bg-cyan-400 rounded-full" />
+        </StaggeredList>
+
         {/* Animated search box for filtering skills */}
         {showSearchBox && (
           <StaggeredList
@@ -207,7 +220,7 @@ export default function Skills() {
             duration={0.4}
             className="w-full"
           >
-            <div className="relative w-full max-w-xs mx-auto">
+            <div className="relative w-full mt-6 mb-3 max-w-xs mx-auto">
               <input
                 type="text"
                 name="skills-search"
@@ -252,7 +265,7 @@ export default function Skills() {
                 setShowAll(true);
                 setQuery("");
               }}
-              className="mt-4 text-cyan-200 hover:text-cyan-400 font-mono text-lg transition mx-auto block"
+              className=" text-cyan-200 hover:text-cyan-400 font-mono text-lg transition mx-auto block"
             >
               Show All
             </button>

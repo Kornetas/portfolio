@@ -52,10 +52,10 @@ function Contact() {
           duration={0.7}
           className="flex flex-col items-center w-full"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-20 md:mb-28 text-white text-center">
+          <h1 className="text-3xl md:text-4xl font-bold mb-20 md:mb-28 text-white text-center">
             Choose <span className="text-cyan-400">your</span> way to{" "}
             <span className="text-cyan-400">contact me</span>
-          </h2>
+          </h1>
         </StaggeredList>
 
         {/* Contact methods (LinkedIn, GitHub, E-mail, copy email button) */}

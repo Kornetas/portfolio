@@ -16,9 +16,9 @@ export default function NotFound() {
           Oh no!{" "}
           <span className="block text-6xl sm:text-8xl md:text-9xl">😱</span>
         </h1>
-        <p className="text-lg sm:text-2xl mb-6 sm:mb-10 text-gray-300 text-center">
+        <h2 className="text-lg sm:text-2xl mb-6 sm:mb-10 text-gray-300 text-center">
           This page doesn&apos;t exist.
-        </p>
+        </h2>
         <Link
           to="/"
           className="px-6 py-3 sm:px-10 sm:py-4 rounded-3xl bg-pink-500 hover:bg-pink-600 text-base sm:text-xl font-bold text-white shadow-2xl transition-all"

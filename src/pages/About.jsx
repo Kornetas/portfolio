@@ -42,10 +42,10 @@ export default function About() {
           duration={0.5}
           className="w-full text-center"
         >
-          <h2 className="inline-block text-4xl md:text-5xl font-bold text-white mb-4 text-center hover:text-cyan-400 transition">
+          <h1 className="inline-block text-4xl md:text-5xl font-bold text-white mb-4 text-center hover:text-cyan-400 transition">
             About Me
-          </h2>
-          <div className="mx-auto my-2 h-1 w-16 bg-cyan-400 rounded-full" />
+          </h1>
+          <div className="mx-auto h-1 w-16 bg-cyan-400 rounded-full" />
         </StaggeredList>
 
         {/* Fade-in animated content boxes */}
@@ -66,9 +66,9 @@ export default function About() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
               <div className="bg-[#181828] border border-cyan-800 rounded-2xl shadow-lg p-7 flex flex-col">
                 {/* How I Became a Full Stack Web Dev */}
-                <h3 className="text-2xl text-white font-bold mb-2">
+                <h2 className="text-2xl text-white font-bold mb-2">
                   How I Became a Full Stack Web Dev
-                </h3>
+                </h2>
                 <p className="text-gray-200 text-base mb-4">
                   My adventure in web development began with a single thought:{" "}
                   <span className="italic text-cyan-400">
@@ -110,9 +110,9 @@ export default function About() {
 
               <div className="bg-[#181828] border border-cyan-800 rounded-2xl shadow-lg p-7 flex flex-col">
                 {/* Experience - Logistics Operative */}
-                <h3 className="text-2xl text-white font-bold mb-2">
+                <h2 className="text-2xl text-white font-bold mb-2">
                   Experience - Logistics Operative
-                </h3>
+                </h2>
                 <p className="text-gray-200 text-base mb-4">
                   Worked in high-volume facilities across the 2016 (UK),
                   2018–2024 (Germany, seasonal) , gaining practical experience
@@ -146,10 +146,10 @@ export default function About() {
             {/* Certificate section */}
             <div className="bg-[#181828] border border-cyan-800 rounded-2xl shadow-lg p-7 flex flex-col">
               {/* Certificate in Full Stack Web Development */}
-              <h3 className="text-2xl text-white font-bold mb-3">
+              <h2 className="text-2xl text-white font-bold mb-3">
                 Certificate in Full Stack Web Development & Technical
                 Interviewing
-              </h3>
+              </h2>
               <div className="text-gray-300 text-1xl mb-3">
                 <a
                   href="https://www.bloomtech.com/courses/full-stack-web-development"
@@ -205,9 +205,9 @@ export default function About() {
             {/* Two-column section: Other interests and approach */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
               <div className="bg-[#181828] border border-cyan-800 rounded-2xl shadow-lg p-7 flex flex-col">
-                <h3 className="text-2xl text-white font-bold mb-2">
+                <h2 className="text-2xl text-white font-bold mb-2">
                   When I’m Not Coding
-                </h3>
+                </h2>
                 <p className="text-gray-200 text-base mb-4">
                   When I’m not coding, I’m always looking for new ways to grow
                   and stay active. My free time is all about recharging and
@@ -251,9 +251,9 @@ export default function About() {
 
               <div className="bg-[#181828] border border-cyan-800 rounded-2xl shadow-lg p-7 flex flex-col">
                 {/* My Approach to Development */}
-                <h3 className="text-2xl text-white font-bold mb-2">
+                <h2 className="text-2xl text-white font-bold mb-2">
                   My Approach to Development
-                </h3>
+                </h2>
                 <p className="text-gray-200 text-base">
                   I’m driven by the challenge of solving complex problems with
                   clean, efficient solutions. Whether it’s designing an
