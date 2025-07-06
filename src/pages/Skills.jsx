@@ -155,7 +155,7 @@ export default function Skills() {
     <>
       <Seo
         title="Skills | Arkadiusz Rak – Full Stack Web Developer"
-        description="Discover the full stack and modern web technologies used by Arkadiusz Rak: React, Node.js, SQL, Tailwind, testing tools, and more."
+        description="Explore all skills and tech stacks used by Full Stack Web Developer Arkadiusz Rak: React, Node.js, SQL, Tailwind, testing, deployment tools, and more."
         url="https://kornet.dev/skills"
         canonical="https://kornet.dev/skills"
         jsonLd={{
@@ -168,23 +168,32 @@ export default function Skills() {
             "JavaScript",
             "React",
             "Redux",
+            "Zustand",
+            "Next.js",
+            "Vite",
             "Node.js",
             "Express",
+            "REST API",
+            "GraphQL",
             "SQL",
             "PostgreSQL",
             "MongoDB",
-            "GraphQL",
-            "Next.js",
-            "Vite",
-            "Tailwind CSS",
-            "Bootstrap",
-            "REST API",
-            "Git",
+            "Firebase",
             "Jest",
             "Cypress",
-            "Testing",
-            "Web Development",
+            "Playwright",
+            "Git",
+            "GitHub",
+            "Tailwind CSS",
+            "Bootstrap",
             "UI/UX",
+            "Responsive Design",
+            "Testing",
+            "API Testing",
+            "Continuous Integration",
+            "Agile",
+            "SEO",
+            "Web Development",
           ],
         }}
       />
@@ -201,6 +210,8 @@ export default function Skills() {
             <div className="relative w-full max-w-xs mx-auto">
               <input
                 type="text"
+                name="skills-search"
+                id="skills-search"
                 className="bg-[#181828] text-white rounded-xl px-4 py-2 border border-cyan-400 focus:outline-none w-full pr-10"
                 placeholder="Search skills..."
                 value={query}

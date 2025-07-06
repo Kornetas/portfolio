@@ -60,7 +60,7 @@ export default function Projects() {
     <>
       <Seo
         title="Projects | Arkadiusz Rak – Full Stack Web Developer"
-        description="A showcase of recent web development projects by Arkadiusz Rak. Explore React apps, RESTful APIs, data visualizations, and more – built with modern stacks."
+        description="A showcase of recent web development projects by Arkadiusz Rak. Explore React apps, RESTful APIs, data visualizations, and more – built with modern stacks"
         url="https://kornet.dev/projects"
         canonical="https://kornet.dev/projects"
         jsonLd={{

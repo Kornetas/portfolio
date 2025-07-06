@@ -21,7 +21,7 @@ function Contact() {
     <>
       <Seo
         title="Contact | Arkadiusz Rak – Full Stack Web Developer"
-        description="Get in touch with Arkadiusz Rak – Full Stack Developer. Contact via LinkedIn, GitHub, or e-mail. Let's build something amazing together!"
+        description="Contact Full Stack Web Developer Arkadiusz Rak via LinkedIn, GitHub, or e-mail. Let’s build modern web projects together!"
         url="https://kornet.dev/contact"
         canonical="https://kornet.dev/contact"
         jsonLd={{

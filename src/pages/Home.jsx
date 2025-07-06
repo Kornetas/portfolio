@@ -11,7 +11,7 @@ export default function Home() {
     <>
       <Seo
         title="Arkadiusz Rak | Full Stack Web Developer Portfolio"
-        description="Portfolio of Arkadiusz Rak – Full Stack Web Developer with a passion for detail. Explore my projects, skills, and resume. Modern code, fresh design, and constant learning."
+        description="Portfolio of Arkadiusz Rak – Full Stack Web Developer. Explore my projects, skills, and resume. Modern code, fresh design, and learning."
         url="https://kornet.dev/"
         canonical="https://kornet.dev/"
         jsonLd={{

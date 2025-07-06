@@ -17,7 +17,7 @@ export default function About() {
     <>
       <Seo
         title="About | Arkadiusz Rak – Full Stack Web Developer"
-        description="Learn more about Arkadiusz Rak – his background, education, approach to coding, and journey from logistics to web development. Check out my tech stack, certificate, and passions outside programming."
+        description="Learn about Arkadiusz Rak journey from logistics to web development, his education at BloomTech, coding approach, skills, and tech passions."
         url="https://kornet.dev/about"
         canonical="https://kornet.dev/about"
         jsonLd={{

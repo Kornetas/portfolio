@@ -5,8 +5,8 @@ export default function NotFound() {
   return (
     <>
       <Seo
-        title="404 Not Found | Arkadiusz Rak – Portfolio"
-        description="Oops! This page doesn’t exist. Go back to Arkadiusz Rak’s portfolio and discover modern, detail-oriented web development."
+        title="404 Page Not Found | Arkadiusz Rak – Portfolio"
+        description="Oops! This page doesn’t exist. Go back to Arkadiusz Rak portfolio and discover modern, detail-oriented web development."
         url="https://kornet.dev/404"
         canonical="https://kornet.dev/404"
       />
