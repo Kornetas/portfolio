@@ -11,6 +11,7 @@ import {
   FaGithub,
   FaDatabase,
   FaTimes,
+  FaCubes,
 } from "react-icons/fa";
 import {
   SiRedux,
@@ -48,71 +49,71 @@ const skills = [
   { name: "HTML5", icon: <FaHtml5 className="text-orange-500" /> },
   { name: "CSS3", icon: <FaCss3Alt className="text-blue-500" /> },
   { name: "JavaScript", icon: <FaJsSquare className="text-yellow-400" /> },
-  { name: "SQL", icon: <FaDatabase className="text-indigo-500" /> },
   { name: "React", icon: <FaReact className="text-cyan-400" /> },
-  { name: "Redux", icon: <SiRedux className="text-purple-500" /> },
-  { name: "Axios", icon: <SiAxios className="text-sky-500" /> },
-  { name: "Tailwind CSS", icon: <SiTailwindcss className="text-cyan-400" /> },
-  { name: "Yup", icon: <SiPyup className="text-yellow-700" /> },
-  {
-    name: "Next.js",
-    icon: <SiNextdotjs className="text-black dark:text-white" />,
-  },
-  { name: "Vite", icon: <SiVite className="text-yellow-400" /> },
   { name: "Node.js", icon: <FaNodeJs className="text-green-600" /> },
   {
     name: "Express",
     icon: <SiExpress className="text-black dark:text-white" />,
   },
-  { name: "GraphQL", icon: <SiGraphql className="text-pink-500" /> },
-  { name: "RESTful API", icon: <FaDatabase className="text-blue-300" /> },
-  { name: "Bootstrap", icon: <FaBootstrap className="text-purple-600" /> },
+  { name: "SQL", icon: <FaDatabase className="text-indigo-500" /> },
   { name: "PostgreSQL", icon: <SiPostgresql className="text-blue-700" /> },
   { name: "MongoDB", icon: <SiMongodb className="text-green-600" /> },
-  { name: "SQLite", icon: <SiSqlite className="text-blue-400" /> },
-  { name: "Knex.js", icon: <SiKnexdotjs className="text-orange-400" /> },
-  { name: "Firebase", icon: <SiFirebase className="text-yellow-500" /> },
-  { name: "Jest", icon: <SiJest className="text-red-500" /> },
-  { name: "Cypress", icon: <SiCypress className="text-green-400" /> },
-  { name: "Puppeteer", icon: <SiPuppeteer className="text-yellow-500" /> },
-  { name: "Postman", icon: <SiPostman className="text-orange-500" /> },
-  { name: "Insomnia", icon: <SiInsomnia className="text-purple-600" /> },
-  { name: "HTTPie", icon: <SiHttpie className="text-green-500" /> },
-  { name: "ESLint", icon: <SiEslint className="text-purple-500" /> },
-  { name: "OpenAI", icon: <SiOpenai className="text-green-600" /> },
+  { name: "Redux", icon: <SiRedux className="text-purple-500" /> },
+  {
+    name: "Next.js",
+    icon: <SiNextdotjs className="text-black dark:text-white" />,
+  },
+  { name: "RESTful API", icon: <FaDatabase className="text-blue-300" /> },
+  { name: "GraphQL", icon: <SiGraphql className="text-pink-500" /> },
   { name: "Git", icon: <FaGitAlt className="text-orange-600" /> },
   {
     name: "GitHub",
     icon: <FaGithub className="text-gray-900 dark:text-white" />,
   },
-  { name: "Figma", icon: <SiFigma className="text-pink-500" /> },
+  { name: "Tailwind CSS", icon: <SiTailwindcss className="text-cyan-400" /> },
+  { name: "Bootstrap", icon: <FaBootstrap className="text-purple-600" /> },
+  { name: "Vite", icon: <SiVite className="text-yellow-400" /> },
+  { name: "Axios", icon: <SiAxios className="text-sky-500" /> },
+  { name: "Yup", icon: <SiPyup className="text-yellow-700" /> },
+  { name: "Jest", icon: <SiJest className="text-red-500" /> },
+  { name: "Cypress", icon: <SiCypress className="text-green-400" /> },
+  { name: "Puppeteer", icon: <SiPuppeteer className="text-yellow-500" /> },
+  { name: "Knex.js", icon: <SiKnexdotjs className="text-orange-400" /> },
+  { name: "SQLite", icon: <SiSqlite className="text-blue-400" /> },
+  { name: "Firebase", icon: <SiFirebase className="text-yellow-500" /> },
+  { name: "Netlify", icon: <SiNetlify className="text-teal-400" /> },
+  { name: "Vercel", icon: <SiVercel className="text-black dark:text-white" /> },
   { name: "Heroku", icon: <SiHeroku className="text-purple-800" /> },
   {
     name: "Railway",
     icon: <SiRailway className="text-black dark:text-white" />,
   },
   { name: "Render", icon: <SiRender className="text-blue-400" /> },
-  { name: "Netlify", icon: <SiNetlify className="text-teal-400" /> },
-  { name: "Vercel", icon: <SiVercel className="text-black dark:text-white" /> },
+  { name: "Postman", icon: <SiPostman className="text-orange-500" /> },
+  { name: "Insomnia", icon: <SiInsomnia className="text-purple-600" /> },
+  { name: "HTTPie", icon: <SiHttpie className="text-green-500" /> },
+  { name: "ESLint", icon: <SiEslint className="text-purple-500" /> },
+  { name: "Figma", icon: <SiFigma className="text-pink-500" /> },
+  { name: "OpenAI", icon: <SiOpenai className="text-green-600" /> },
 ];
 
 // Skills without icons (just names)
 const skillsNoIcon = [
   "Zustand",
-  "SEO",
   "Webpack",
-  "VS Code",
-  "Morgan",
   "JWT",
   "bcrypt",
+  "Morgan",
   "Playwright",
   "Supertest",
-  "Agile Project Management",
-  "Algorithms",
-  "Architecture",
+  "SEO",
+  "VS Code",
   "Debugging",
+  "Architecture",
+  "Algorithms",
   "Deployment",
   "No-Code Automation",
+  "Agile Project Management",
 ];
 
 // Combine all skills into one array for filtering/search
@@ -295,9 +296,14 @@ export default function Skills() {
                     className="flex flex-col items-center bg-gray-800 rounded-xl p-4 border border-gray-700 shadow hover:shadow-md transition hover:scale-105"
                   >
                     {/* Skill icon (if available) */}
-                    {skill.icon && (
+                    {skill.icon ? (
                       <div className="text-4xl mb-2">{skill.icon}</div>
+                    ) : (
+                      <div className="text-4xl mb-2 flex items-center justify-center">
+                        <FaCubes className="text-blue-400" />
+                      </div>
                     )}
+
                     <div className="text-white font-medium text-center text-sm">
                       {skill.name}
                     </div>
