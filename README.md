@@ -24,7 +24,7 @@ I love modern code, fresh design, and constant learning – check out my work be
   _Node.js, Express, MongoDB, Jest, Supertest_  
   [GitHub](https://github.com/Kornetas/api-forge)
 
-- **GraphQL Project in Progress**
+- **DevTracker – Task Management App**
 
   _Javascript, React, Next.js, GraphQL, PostgreSQL, Playwright_  
   [GitHub](https://github.com/Kornetas)

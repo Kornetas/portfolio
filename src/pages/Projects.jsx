@@ -30,7 +30,7 @@ const projects = [
     techs: ["Node.js", "Express", "MongoDB", "Jest", "Supertest"],
   },
   {
-    name: "GraphQL Project in Progress",
+    name: "DevTracker – Task Management App",
     description:
       "This project is currently under development. The stack includes React and Next.js for the frontend, with module CSS for styling. The backend uses GraphQL and Apollo Server, with PostgreSQL as the database. End-to-end testing is performed using Playwright. The main goal is to build a modern, scalable web application with real-time data handling.",
     github: "https://github.com/Kornetas",
@@ -87,7 +87,7 @@ export default function Projects() {
           className="w-full flex flex-col items-center"
         >
           <h1 className="text-3xl md:text-4xl font-bold mb-2 text-white text-center hover:text-cyan-400 transition">
-            My Projects
+            Featured Projects
           </h1>
           <div className="mx-auto my-2 h-1 w-16 bg-cyan-400 rounded-full" />
           <h2 className="text-xl text-gray-300 text-center mb-20">
