@@ -78,19 +78,19 @@ export default function Projects() {
         }}
       />
 
-      <section className="flex flex-col items-center min-h-[80vh] px-4 py-12">
-        {/* Section heading */}
+      <section className="flex flex-col items-center min-h-[80vh] px-2 py-10">
+         {/* Section heading */}
         <StaggeredList
           from="bottom"
           stagger={0.3}
           duration={0.5}
           className="w-full flex flex-col items-center"
         >
-          <h1 className="text-3xl md:text-4xl font-bold mb-2 text-white text-center hover:text-cyan-400 transition">
+          <h1 className="inline-block text-4xl md:text-5xl font-bold text-white mb-4 text-center hover:text-cyan-400 transition">
             Featured Projects
           </h1>
-          <div className="mx-auto my-2 h-1 w-16 bg-cyan-400 rounded-full" />
-          <h2 className="text-xl text-gray-300 text-center mb-20">
+          <div className="mx-auto my-4 h-1 w-24 bg-cyan-400 rounded-full" />
+          <h2 className="text-xl md:text-1xl text-gray-300 mb-12 text-center">
             Check out some of my recent work
           </h2>
         </StaggeredList>
@@ -105,7 +105,7 @@ export default function Projects() {
               from="bottom"
               stagger={0.5}
               duration={0.5}
-              className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-14"
+              className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-10"
             >
               {projects.map((project) => (
                 <ProjectCard key={project.name} project={project} />
