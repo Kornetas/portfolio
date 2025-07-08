@@ -42,11 +42,11 @@ export default function About() {
           duration={0.5}
           className="w-full flex flex-col items-center"
         >
-          <h1 className="inline-block text-4xl md:text-5xl font-bold text-white mb-4 text-center hover:text-cyan-400 transition">
+          <h1 className="inline-block text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 text-center hover:text-cyan-400 transition">
             About Me
           </h1>
-          <div className="mx-auto my-4 h-1 w-24 bg-cyan-400 rounded-full" />
-          <h2 className="text-xl md:text-1xl text-gray-300 mb-4 text-center">
+          <div className="mx-auto my-4 h-1 sm:w-24 w-12 bg-cyan-400 rounded-full" />
+          <h2 className="tex-sm sm:text-xl text-gray-300 mb-4 text-center">
             Get to know more about my background, skills, and educational
             journey
           </h2>
@@ -70,7 +70,7 @@ export default function About() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
               <div className="bg-[#181828] border border-cyan-800 rounded-2xl shadow-lg p-7 flex flex-col">
                 {/* How I Became a Full Stack Web Dev */}
-                <h2 className="text-2xl text-white font-bold mb-2">
+                <h2 className="text-[1.2em] sm:text-[1.3em] md:text-2xl text-white font-bold mb-2">
                   How I Became a Full Stack Web Dev
                 </h2>
                 <p className="text-gray-200 text-base mb-4">
@@ -114,7 +114,7 @@ export default function About() {
 
               <div className="bg-[#181828] border border-cyan-800 rounded-2xl shadow-lg p-7 flex flex-col">
                 {/* Experience - Logistics Operative */}
-                <h2 className="text-2xl text-white font-bold mb-2">
+                <h2 className="text-[1.2em] sm:text-[1.3em] md:text-2xl text-white font-bold mb-2">
                   Experience - Logistics Operative
                 </h2>
                 <p className="text-gray-200 text-base mb-4">
@@ -150,7 +150,7 @@ export default function About() {
             {/* Certificate section */}
             <div className="bg-[#181828] border border-cyan-800 rounded-2xl shadow-lg p-7 flex flex-col">
               {/* Certificate in Full Stack Web Development */}
-              <h2 className="text-2xl text-white font-bold mb-3">
+              <h2 className="text-[1.2em] sm:text-[1.3em] md:text-2xl text-white font-bold mb-3">
                 Certificate in Full Stack Web Development & Technical
                 Interviewing
               </h2>
@@ -169,7 +169,7 @@ export default function About() {
                   A comprehensive certification proving expertise in modern web
                   development technologies and technical interviewing.
                   <br />
-                  <span className="hidden md:inline">
+                  <span>
                     Earned by passing rigorous technical assessments, building
                     full-stack applications, completing an advanced curriculum
                     in computer science, and delivering collaborative,
@@ -209,7 +209,7 @@ export default function About() {
             {/* Two-column section: Other interests and approach */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
               <div className="bg-[#181828] border border-cyan-800 rounded-2xl shadow-lg p-7 flex flex-col">
-                <h2 className="text-2xl text-white font-bold mb-2">
+                <h2 className="text-[1.2em] sm:text-[1.3em] md:text-2xl text-white font-bold mb-2">
                   When I’m Not Coding
                 </h2>
                 <p className="text-gray-200 text-base mb-4">
@@ -255,7 +255,7 @@ export default function About() {
 
               <div className="bg-[#181828] border border-cyan-800 rounded-2xl shadow-lg p-7 flex flex-col">
                 {/* My Approach to Development */}
-                <h2 className="text-2xl text-white font-bold mb-2">
+                <h2 className="text-[1.2em] sm:text-[1.3em] md:text-2xl text-white font-bold mb-2">
                   My Approach to Development
                 </h2>
                 <p className="text-gray-200 text-base">

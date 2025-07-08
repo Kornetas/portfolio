@@ -86,11 +86,11 @@ export default function Projects() {
           duration={0.5}
           className="w-full flex flex-col items-center"
         >
-          <h1 className="inline-block text-4xl md:text-5xl font-bold text-white mb-4 text-center hover:text-cyan-400 transition">
+          <h1 className="inline-block text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 text-center hover:text-cyan-400 transition">
             Featured Projects
           </h1>
-          <div className="mx-auto my-4 h-1 w-24 bg-cyan-400 rounded-full" />
-          <h2 className="text-xl md:text-1xl text-gray-300 mb-12 text-center">
+          <div className="mx-auto my-4 h-1 sm:w-24 w-12 bg-cyan-400 rounded-full" />
+          <h2 className="tex-sm sm:text-xl text-gray-300 mb-12 text-center">
             Check out some of my recent work
           </h2>
         </StaggeredList>

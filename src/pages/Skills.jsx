@@ -214,10 +214,10 @@ export default function Skills() {
           duration={0.45}
           className="w-full flex flex-col items-center"
         >
-          <h1 className="inline-block text-4xl md:text-5xl font-bold text-white mb-4 text-center hover:text-cyan-400 transition">
+          <h1 className="inline-block text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 text-center hover:text-cyan-400 transition">
             Skills & Tech Stack
           </h1>
-          <div className="mx-auto mt-4 h-1 w-24 bg-cyan-400 rounded-full" />
+          <div className="mx-auto mt-4 h-1 sm:w-24 w-12 bg-cyan-400 rounded-full" />
         </StaggeredList>
 
         {/* Animated search box for filtering skills */}
