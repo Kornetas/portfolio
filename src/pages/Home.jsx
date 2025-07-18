@@ -21,7 +21,7 @@ export default function Home() {
       />
 
       <div className="overflow-hidden w-full">
-        <section className="hero-section relative w-full flex flex-col-reverse md:flex-row mt-10">
+        <section className="hero-section relative w-full flex flex-col-reverse md:flex-row mt-20">
           {/* Animated desktop avatar section, only visible on larger screens */}
           <StaggeredList
             from="bottom"
@@ -34,7 +34,7 @@ export default function Home() {
           </StaggeredList>
 
           {/* Main hero text and controls (mobile and desktop) */}
-          <div className="hero-text w-full md:w-2/4 flex flex-col justify-center items-center md:items-start px-4 sm:px-10 md:pl-20 z-10 pb-12 md:pb-0 pt-8 md:pt-0">
+          <div className="hero-text w-full md:w-2/4 flex flex-col justify-center items-center md:items-start px-4 sm:px-10 md:pl-20 z-10 pb-12 md:pb-0 md:pt-0">
             <StaggeredList
               from="bottom"
               stagger={0.3}
