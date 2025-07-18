@@ -21,7 +21,7 @@ export default function Home() {
       />
 
       <div className="overflow-hidden w-full">
-        <section className="hero-section relative w-full flex flex-col-reverse md:flex-row md:min-h-screen">
+        <section className="hero-section relative w-full flex flex-col-reverse md:flex-row mt-10">
           {/* Animated desktop avatar section, only visible on larger screens */}
           <StaggeredList
             from="bottom"
