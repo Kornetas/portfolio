@@ -6,6 +6,7 @@ export default function Footer() {
     <footer className="bg-gray-700 text-white py-8">
       <div className="container mx-auto flex flex-col items-center">
         <div className="flex gap-8 text-lg mb-4">
+          {/* LinkedIn profile */}
           <a
             href="https://www.linkedin.com/in/arkadiusz-rak-807272306/"
             target="_blank"
@@ -15,6 +16,7 @@ export default function Footer() {
             <FaLinkedin className="text-2xl" />
             <span>LinkedIn</span>
           </a>
+          {/* E-mail link */}
           <a
             href="mailto:arek93r@gmail.com"
             className="flex items-center gap-2 hover:text-red-400 transition"
@@ -22,6 +24,7 @@ export default function Footer() {
             <FaEnvelope className="text-2xl" />
             <span>Email</span>
           </a>
+          {/* GitHub profile */}
           <a
             href="https://github.com/Kornetas"
             target="_blank"
@@ -33,8 +36,12 @@ export default function Footer() {
           </a>
         </div>
 
+        {/* Link to privacy and legal information */}
         <div className="text-sl">
-          <Link to="/privacy" className="hover:underline hover:text-green-400 transition">
+          <Link
+            to="/privacy"
+            className="hover:underline hover:text-green-400 transition"
+          >
             Privacy & Legal
           </Link>
         </div>
