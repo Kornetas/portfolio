@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
+import { MdEmail, MdContentCopy } from "react-icons/md";
 import StaggeredList from "../components/StaggeredList";
 import Seo from "../components/Seo";
 
@@ -100,9 +100,10 @@ function Contact() {
           <button
             type="button"
             onClick={handleCopy}
-            className="flex items-center justify-center gap-3 px-8 py-4 rounded-full border-[1px] border-white text-white font-bold text-[1.2rem] bg-transparent transition hover:border-cyan-400 hover:text-cyan-400 focus:outline-none relative w-full"
+            className="flex items-center justify-start md:justify-center gap-3 px-8 py-4 rounded-full border border-white text-white font-bold text-[1.2rem] transition hover:border-cyan-400 hover:text-cyan-400 w-full md:w-auto"
           >
-            {email}
+            <MdContentCopy className="text-white text-3xl" />
+            <span className="text-center w-full md:w-auto">{email}</span>
           </button>
         </StaggeredList>
       </section>
