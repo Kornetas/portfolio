@@ -15,13 +15,14 @@ import Privacy from "./pages/Privacy";
 function App() {
   return (
     <Router>
-      {/* Google Analytics */}
+      {/* Google Analytics tracking */}
       <Analytics />
+
       <div className="flex flex-col min-h-screen bg-gray-900 text-white">
-        {/* Main site navigation bar */}
+        {/* Site navigation bar at the top */}
         <Navbar />
 
-        {/* Page routes */}
+        {/* Main content, changes based on route */}
         <div className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
@@ -29,14 +30,17 @@ function App() {
             <Route path="/projects" element={<Projects />} />
             <Route path="/skills" element={<Skills />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="*" element={<NotFound />} />
             <Route path="/privacy" element={<Privacy />} />
+            {/* Fallback for unknown URLs */}
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
 
-        {/* Floating "Back to Top" button */}
+        {/* Floating button that scrolls the page to the top */}
         <BackToTopButton />
+        {/* Footer at the bottom of the site */}
         <Footer />
+        {/* Privacy policy / cookies banner */}
         <PrivacyBanner />
       </div>
     </Router>

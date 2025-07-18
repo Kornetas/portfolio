@@ -1,146 +1,29 @@
 import { useRef, useEffect, useState } from "react";
+import { skills, skillsNoIcon } from "../assets/mySkills";
 import StaggeredList from "../components/StaggeredList";
-import {
-  FaHtml5,
-  FaCss3Alt,
-  FaJsSquare,
-  FaReact,
-  FaNodeJs,
-  FaBootstrap,
-  FaGitAlt,
-  FaGithub,
-  FaDatabase,
-  FaTimes,
-  FaCubes,
-} from "react-icons/fa";
-import {
-  SiRedux,
-  SiAxios,
-  SiTailwindcss,
-  SiPyup,
-  SiNextdotjs,
-  SiVite,
-  SiExpress,
-  SiGraphql,
-  SiPostgresql,
-  SiMongodb,
-  SiSqlite,
-  SiKnexdotjs,
-  SiFirebase,
-  SiJest,
-  SiCypress,
-  SiPuppeteer,
-  SiPostman,
-  SiInsomnia,
-  SiHttpie,
-  SiEslint,
-  SiOpenai,
-  SiHeroku,
-  SiRailway,
-  SiRender,
-  SiNetlify,
-  SiVercel,
-  SiFigma,
-} from "react-icons/si";
 import Seo from "../components/Seo";
+import { FaTimes, FaCubes } from "react-icons/fa";
 
-// Main skills list with icons
-const skills = [
-  { name: "HTML5", icon: <FaHtml5 className="text-orange-500" /> },
-  { name: "CSS3", icon: <FaCss3Alt className="text-blue-500" /> },
-  { name: "JavaScript", icon: <FaJsSquare className="text-yellow-400" /> },
-  { name: "React", icon: <FaReact className="text-cyan-400" /> },
-  { name: "Node.js", icon: <FaNodeJs className="text-green-600" /> },
-  {
-    name: "Express",
-    icon: <SiExpress className="text-black dark:text-white" />,
-  },
-  { name: "SQL", icon: <FaDatabase className="text-indigo-500" /> },
-  { name: "PostgreSQL", icon: <SiPostgresql className="text-blue-700" /> },
-  { name: "MongoDB", icon: <SiMongodb className="text-green-600" /> },
-  { name: "Redux", icon: <SiRedux className="text-purple-500" /> },
-  {
-    name: "Next.js",
-    icon: <SiNextdotjs className="text-black dark:text-white" />,
-  },
-  { name: "RESTful API", icon: <FaDatabase className="text-blue-300" /> },
-  { name: "GraphQL", icon: <SiGraphql className="text-pink-500" /> },
-  { name: "Git", icon: <FaGitAlt className="text-orange-600" /> },
-  {
-    name: "GitHub",
-    icon: <FaGithub className="text-gray-900 dark:text-white" />,
-  },
-  { name: "Tailwind CSS", icon: <SiTailwindcss className="text-cyan-400" /> },
-  { name: "Bootstrap", icon: <FaBootstrap className="text-purple-600" /> },
-  { name: "Vite", icon: <SiVite className="text-yellow-400" /> },
-  { name: "Axios", icon: <SiAxios className="text-sky-500" /> },
-  { name: "Yup", icon: <SiPyup className="text-yellow-700" /> },
-  { name: "Jest", icon: <SiJest className="text-red-500" /> },
-  { name: "Cypress", icon: <SiCypress className="text-green-400" /> },
-  { name: "Puppeteer", icon: <SiPuppeteer className="text-yellow-500" /> },
-  { name: "Knex.js", icon: <SiKnexdotjs className="text-orange-400" /> },
-  { name: "SQLite", icon: <SiSqlite className="text-blue-400" /> },
-  { name: "Firebase", icon: <SiFirebase className="text-yellow-500" /> },
-  { name: "Netlify", icon: <SiNetlify className="text-teal-400" /> },
-  { name: "Vercel", icon: <SiVercel className="text-black dark:text-white" /> },
-  { name: "Heroku", icon: <SiHeroku className="text-purple-800" /> },
-  {
-    name: "Railway",
-    icon: <SiRailway className="text-black dark:text-white" />,
-  },
-  { name: "Render", icon: <SiRender className="text-blue-400" /> },
-  { name: "Postman", icon: <SiPostman className="text-orange-500" /> },
-  { name: "Insomnia", icon: <SiInsomnia className="text-purple-600" /> },
-  { name: "HTTPie", icon: <SiHttpie className="text-green-500" /> },
-  { name: "ESLint", icon: <SiEslint className="text-purple-500" /> },
-  { name: "Figma", icon: <SiFigma className="text-pink-500" /> },
-  { name: "OpenAI", icon: <SiOpenai className="text-green-600" /> },
-];
-
-// Skills without icons (just names)
-const skillsNoIcon = [
-  "Authentication",
-  "Authorization",
-  "JWT",
-  "bcrypt",
-  "Validation",
-  "CRUD",
-  "Debugging",
-  "Algorithms",
-  "Code Refactoring",
-  "Architecture",
-  "Deployment",
-  "Webpack",
-  "Babel",
-  "Cache",
-  "Zustand",
-  "Supertest",
-  "Playwright",
-  "Morgan",
-  "SEO",
-  "VS Code",
-  "No-Code Automation",
-  "Agile Project Management",
-];
-
-// Combine all skills into one array for filtering/search
+// Combine all skills into one array for easier filtering/search
 const allSkills = [
   ...skills,
-  ...skillsNoIcon.map((name) => ({
-    name,
-    icon: null,
-  })),
+  ...skillsNoIcon.map((name) => ({ name, icon: null })),
 ];
 
 export default function Skills() {
-  // State for search and animated entrances
+  // State to store search query
   const [query, setQuery] = useState("");
+
+  // Controls the appearance of the search box (animated)
   const [showSearchBox, setShowSearchBox] = useState(false);
+
+  // Controls the appearance of the skills grid (animated)
   const [showSkills, setShowSkills] = useState(false);
 
+  // Ref to keep track if the animation has already happened (to prevent repeating)
   const hasAnimated = useRef(false);
 
-  // Entrance animation for search box and skills grid
+  // Run entrance animations with delay when component mounts
   useEffect(() => {
     const t1 = setTimeout(() => setShowSearchBox(true), 400);
     const t2 = setTimeout(() => setShowSkills(true), 1200);
@@ -150,17 +33,19 @@ export default function Skills() {
     };
   }, []);
 
+  // Set flag so animation plays only on the initial render
   useEffect(() => {
     if (showSkills) hasAnimated.current = true;
   }, [showSkills]);
 
-  // Filter skills based on user input
+  // Filter the skills based on user input in the search box
   const filteredSkills = allSkills.filter((skill) =>
     skill.name.toLowerCase().includes(query.toLowerCase())
   );
 
   return (
     <>
+      {/* SEO metadata for the page */}
       <Seo
         title="Skills | Arkadiusz Rak – Full Stack Web Developer"
         description="Explore all skills and tech stacks used by Full Stack Web Developer Arkadiusz Rak: React, Node.js, SQL, Tailwind, testing, deployment tools, and more."
@@ -229,6 +114,7 @@ export default function Skills() {
             className="w-full"
           >
             <div className="relative w-full mt-6 mb-3 max-w-xs mx-auto">
+              {/* Controlled input for filtering skills */}
               <input
                 type="text"
                 name="skills-search"
@@ -239,7 +125,7 @@ export default function Skills() {
                 onChange={(e) => setQuery(e.target.value)}
               />
 
-              {/* Button to clear search input */}
+              {/* Button to clear the search input (visible only when user types) */}
               {query && (
                 <button
                   type="button"
@@ -254,8 +140,8 @@ export default function Skills() {
           </StaggeredList>
         )}
 
+        {/* Main grid: displays skill cards or a message if nothing matches */}
         <div className="relative flex flex-col justify-center items-center w-full min-h-[200px] max-w-6xl">
-          {/* Show message if no skills match the filter */}
           {showSkills &&
             (filteredSkills.length === 0 ? (
               <div className="text-red-600 text-lg font-semibold py-8 text-center mt-[-100px]">
@@ -263,7 +149,6 @@ export default function Skills() {
                 leveling up!
               </div>
             ) : (
-              // Animated grid of skill icons/badges
               <StaggeredList
                 animate={!hasAnimated.current}
                 from="bottom"
@@ -276,15 +161,14 @@ export default function Skills() {
                     key={skill.name}
                     className="flex flex-col items-center bg-gray-800 rounded-xl p-4 border border-gray-700 shadow hover:shadow-md transition hover:scale-105"
                   >
-                    {/* Skill icon (if available) */}
-                    {skill.icon ? (
-                      <div className="text-4xl mb-2">{skill.icon}</div>
-                    ) : (
-                      <div className="text-4xl mb-2 flex items-center justify-center">
+                    {/* Render skill icon if available, otherwise fallback icon */}
+                    <div className="text-4xl mb-2">
+                      {skill.icon ? (
+                        skill.icon
+                      ) : (
                         <FaCubes className="text-blue-400" />
-                      </div>
-                    )}
-
+                      )}
+                    </div>
                     <div className="text-white font-medium text-center text-sm">
                       {skill.name}
                     </div>
