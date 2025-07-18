@@ -7,8 +7,9 @@ export default function StaggeredList({
   duration = 0.4,
   from = "bottom",
   className = "",
+  animate = true,
 }) {
-  // Choose animation direction based on the "from" prop
+   // Choose animation direction based on the "from" prop
   const directions = {
     bottom: { y: 20, x: 0 },
     top: { y: -20, x: 0 },
@@ -19,12 +20,14 @@ export default function StaggeredList({
 
   return (
     <div className={className}>
-      {/* Map each child to a staggered animation using framer-motion */}
+           {/* Map each child to a staggered animation using framer-motion */}
       {React.Children.map(children, (child, idx) => (
         <motion.div
-          initial={{ opacity: 0, ...direction }}
-          animate={{ opacity: 1, y: 0, x: 0 }}
-          transition={{ delay: stagger * idx, duration }}
+          initial={animate ? { opacity: 0, ...direction } : false}
+          animate={animate ? { opacity: 1, y: 0, x: 0 } : false}
+          transition={
+            animate ? { delay: stagger * idx, duration } : { duration: 0 }
+          }
         >
           {child}
         </motion.div>

@@ -79,14 +79,14 @@ export default function Projects() {
       />
 
       <section className="flex flex-col items-center min-h-[80vh] px-2 py-10">
-         {/* Section heading */}
+        {/* Section heading */}
         <StaggeredList
           from="bottom"
           stagger={0.3}
           duration={0.5}
           className="w-full flex flex-col items-center"
         >
-          <h1 className="inline-block text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 text-center hover:text-cyan-400 transition">
+          <h1 className="inline-block text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 text-center">
             Featured Projects
           </h1>
           <div className="mx-auto my-4 h-1 sm:w-24 w-12 bg-cyan-400 rounded-full" />

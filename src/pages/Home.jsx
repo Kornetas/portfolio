@@ -1,12 +1,9 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import StaggeredList from "../components/StaggeredList";
 import HeroAvatar from "../components/HeroAvatar";
 import Seo from "../components/Seo";
 
 export default function Home() {
-  const navigate = useNavigate();
-
   return (
     <>
       <Seo
@@ -60,11 +57,11 @@ export default function Home() {
               </div>
 
               {/* Short description */}
-              <p className="text-gray-200 mb-1 sm:mb-1 text-center md:text-left text-[clamp(1rem,1.2vw,1.2rem)]">
+              <p className="text-white mb-1 sm:mb-1 text-center md:text-left text-[clamp(1rem,1.2vw,1.2rem)]">
                 With a passion for detail.
               </p>
 
-              <p className="text-red-600 mb-4 sm:mb-4 text-center md:text-left text-[clamp(1rem,1.2vw,1.2rem)]">
+              <p className="text-white mb-4 sm:mb-4 text-center md:text-left text-[clamp(1rem,1.2vw,1.2rem)]">
                 Modern code, fresh design, and constant learning are my fuel.
               </p>
 

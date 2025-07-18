@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import StaggeredList from "../components/StaggeredList";
 import {
   FaHtml5,
@@ -133,31 +133,31 @@ const allSkills = [
 ];
 
 export default function Skills() {
-  // States for search, "show all" toggle, and animated entrances
+  // State for search and animated entrances
   const [query, setQuery] = useState("");
-  const [showAll, setShowAll] = useState(false);
   const [showSearchBox, setShowSearchBox] = useState(false);
-  const [showShowAll, setShowShowAll] = useState(false);
   const [showSkills, setShowSkills] = useState(false);
 
-  // Entrance animation for search box, "show all" button, and skills grid
+  const hasAnimated = useRef(false);
+
+  // Entrance animation for search box and skills grid
   useEffect(() => {
     const t1 = setTimeout(() => setShowSearchBox(true), 400);
-    const t2 = setTimeout(() => setShowShowAll(true), 900);
-    const t3 = setTimeout(() => setShowSkills(true), 1500);
+    const t2 = setTimeout(() => setShowSkills(true), 1200);
     return () => {
       clearTimeout(t1);
       clearTimeout(t2);
-      clearTimeout(t3);
     };
   }, []);
 
-  // Filter skills based on user input or "show all"
-  const filteredSkills = showAll
-    ? allSkills
-    : allSkills.filter((skill) =>
-        skill.name.toLowerCase().includes(query.toLowerCase())
-      );
+  useEffect(() => {
+    if (showSkills) hasAnimated.current = true;
+  }, [showSkills]);
+
+  // Filter skills based on user input
+  const filteredSkills = allSkills.filter((skill) =>
+    skill.name.toLowerCase().includes(query.toLowerCase())
+  );
 
   return (
     <>
@@ -214,7 +214,7 @@ export default function Skills() {
           duration={0.45}
           className="w-full flex flex-col items-center"
         >
-          <h1 className="inline-block text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 text-center hover:text-cyan-400 transition">
+          <h1 className="inline-block text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 text-center">
             Skills & Tech Stack
           </h1>
           <div className="mx-auto mt-4 h-1 sm:w-24 w-12 bg-cyan-400 rounded-full" />
@@ -236,10 +236,7 @@ export default function Skills() {
                 className="bg-[#181828] text-white rounded-xl px-4 py-2 border border-cyan-400 focus:outline-none w-full pr-10"
                 placeholder="Search skills..."
                 value={query}
-                onChange={(e) => {
-                  setQuery(e.target.value);
-                  setShowAll(false);
-                }}
+                onChange={(e) => setQuery(e.target.value)}
               />
 
               {/* Button to clear search input */}
@@ -247,36 +244,13 @@ export default function Skills() {
                 <button
                   type="button"
                   className="absolute right-3 top-1/2 -translate-y-1/2 text-cyan-400 hover:text-cyan-200 text-xl"
-                  onClick={() => {
-                    setQuery("");
-                    setShowAll(true);
-                  }}
+                  onClick={() => setQuery("")}
                   aria-label="Clear"
                 >
                   <FaTimes />
                 </button>
               )}
             </div>
-          </StaggeredList>
-        )}
-
-        {/* "Show All" button */}
-        {showShowAll && (
-          <StaggeredList
-            from="bottom"
-            stagger={0.12}
-            duration={0.4}
-            className="w-full"
-          >
-            <button
-              onClick={() => {
-                setShowAll(true);
-                setQuery("");
-              }}
-              className=" text-cyan-200 hover:text-cyan-400 font-mono text-lg transition mx-auto block"
-            >
-              Show All
-            </button>
           </StaggeredList>
         )}
 
@@ -291,7 +265,7 @@ export default function Skills() {
             ) : (
               // Animated grid of skill icons/badges
               <StaggeredList
-                key={query + showAll}
+                animate={!hasAnimated.current}
                 from="bottom"
                 stagger={0.07}
                 duration={0.5}

@@ -42,7 +42,7 @@ export default function About() {
           duration={0.5}
           className="w-full flex flex-col items-center"
         >
-          <h1 className="inline-block text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 text-center hover:text-cyan-400 transition">
+          <h1 className="inline-block text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 text-center">
             About Me
           </h1>
           <div className="mx-auto my-4 h-1 sm:w-24 w-12 bg-cyan-400 rounded-full" />
@@ -105,10 +105,9 @@ export default function About() {
                 </div>
                 <Link
                   to="/skills"
-                  className="inline-block font-bold text-cyan-400 underline underline-offset-4 hover:text-cyan-300 transition-transform duration-300 hover:scale-105 animate-bounce-x"
+                  className="inline-block font-bold text-cyan-400 underline underline-offset-4 hover:text-cyan-300 transition-transform duration-300 hover:scale-105"
                 >
-                  Check out all my technical skills here:{" "}
-                  <span className="font-bold">Skills</span>
+                  Check out all my technical skills here
                 </Link>
               </div>
 
@@ -159,7 +158,7 @@ export default function About() {
                   href="https://www.bloomtech.com/courses/full-stack-web-development"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block font-bold text-cyan-400 underline underline-offset-4 hover:text-cyan-300 transition-transform duration-300 hover:scale-105 animate-bounce-x mb-2"
+                  className="inline-block font-bold text-cyan-400 underline underline-offset-4 hover:text-cyan-300 transition-transform duration-300 mb-2"
                 >
                   BloomTech - Institute of Technology | 12-Month Immersive
                   Online Coding Bootcamp
