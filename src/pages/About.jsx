@@ -46,10 +46,10 @@ export default function About() {
             About Me
           </h1>
           <div className="mx-auto my-4 h-1 sm:w-24 w-12 bg-cyan-400 rounded-full" />
-          <h2 className="tex-sm sm:text-xl text-gray-300 mb-4 text-center">
+          <p className="tex-sm sm:text-xl text-gray-300 mb-4 text-center">
             Get to know more about my background, skills, and educational
             journey
-          </h2>
+          </p>
         </StaggeredList>
 
         {/* Fade-in animated content boxes */}

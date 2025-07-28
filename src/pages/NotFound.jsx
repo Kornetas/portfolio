@@ -18,9 +18,9 @@ export default function NotFound() {
           Oh no!{" "}
           <span className="block text-6xl sm:text-8xl md:text-9xl">😱</span>
         </h1>
-        <h2 className="text-lg sm:text-2xl mb-6 sm:mb-10 text-gray-300 text-center">
+        <p className="text-lg sm:text-2xl mb-6 sm:mb-10 text-gray-300 text-center">
           This page doesn&apos;t exist.
-        </h2>
+        </p>
 
         {/* Link to navigate back to the home page */}
         <Link

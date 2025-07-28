@@ -90,9 +90,9 @@ export default function Projects() {
             Featured Projects
           </h1>
           <div className="mx-auto my-4 h-1 sm:w-24 w-12 bg-cyan-400 rounded-full" />
-          <h2 className="tex-sm sm:text-xl text-gray-300 mb-12 text-center">
+          <p className="tex-sm sm:text-xl text-gray-300 mb-12 text-center">
             Check out some of my recent work
-          </h2>
+          </p>
         </StaggeredList>
 
         <div
