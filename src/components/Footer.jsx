@@ -3,7 +3,7 @@ import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-700 text-white py-4">
+    <footer className="bg-gray-900 text-white py-4">
       <div className="container mx-auto flex flex-col items-center">
         <div className="flex gap-8 text-lg mb-2">
           {/* LinkedIn profile */}
