@@ -37,6 +37,7 @@ import {
   SiNetlify,
   SiVercel,
   SiFigma,
+  SiTypescript,
 } from "react-icons/si";
 
 // Main skills list with icons
@@ -44,6 +45,7 @@ export const skills = [
   { name: "HTML5", icon: <FaHtml5 className="text-orange-500" /> },
   { name: "CSS3", icon: <FaCss3Alt className="text-blue-500" /> },
   { name: "JavaScript", icon: <FaJsSquare className="text-yellow-400" /> },
+  { name: "TypeScript", icon: <SiTypescript className="text-blue-600" /> },
   { name: "React", icon: <FaReact className="text-cyan-400" /> },
   { name: "Node.js", icon: <FaNodeJs className="text-green-600" /> },
   {

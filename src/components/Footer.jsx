@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="flex gap-8 text-lg mb-2">
           {/* LinkedIn profile */}
           <a
-            href="https://www.linkedin.com/in/arkadiusz-rak-807272306/"
+            href="https://www.linkedin.com/in/arkadiusz-rak"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 hover:text-blue-400 transition"

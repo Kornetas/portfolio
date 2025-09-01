@@ -32,7 +32,7 @@ function Contact() {
           email: "arek93r@gmail.com",
           url: "https://kornet.dev/contact",
           sameAs: [
-            "https://www.linkedin.com/in/arkadiusz-rak-807272306",
+            "https://www.linkedin.com/in/arkadiusz-rak",
             "https://github.com/Kornetas",
           ],
         }}
@@ -67,7 +67,7 @@ function Contact() {
         >
           {/* LinkedIn */}
           <a
-            href="https://www.linkedin.com/in/arkadiusz-rak-807272306"
+            href="https://www.linkedin.com/in/arkadiusz-rak/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-start sm:justify-center gap-3 px-8 py-4 rounded-full border-[1px] border-white text-white font-bold text-[1.2rem] transition hover:border-cyan-400 hover:text-cyan-400 focus:outline-none w-full sm:w-auto"

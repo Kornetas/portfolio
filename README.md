@@ -34,6 +34,7 @@ I love modern code, fresh design, and constant learning – check out my work be
 ![HTML5](https://img.shields.io/badge/-HTML5-E34F26?logo=html5&logoColor=white&style=flat)
 ![CSS3](https://img.shields.io/badge/-CSS3-1572B6?logo=css3&logoColor=white&style=flat)
 ![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?logo=javascript&logoColor=black&style=flat)
+![TypeScript](https://img.shields.io/badge/-TypeScript-3178C6?logo=typescript&logoColor=white&style=flat)
 ![SQL](https://img.shields.io/badge/-SQL-4479A1?logo=sqlite&logoColor=white&style=flat)
 ![React](https://img.shields.io/badge/-React-61DAFB?logo=react&logoColor=black&style=flat)
 ![Redux](https://img.shields.io/badge/-Redux-764ABC?logo=redux&logoColor=white&style=flat)
@@ -64,7 +65,7 @@ Always up for learning something new and collaborating with other devs.
 
 🔗 [Portfolio](https://kornet.dev)
 
-🔗 [LinkedIn – Arkadiusz Rak](https://www.linkedin.com/in/arkadiusz-rak-807272306)
+🔗 [LinkedIn – Arkadiusz Rak](www.linkedin.com/in/arkadiusz-rak)
 
 🔗 [GitHub – Kornetas](https://github.com/Kornetas)
 
